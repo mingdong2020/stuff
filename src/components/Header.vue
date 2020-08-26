@@ -62,9 +62,11 @@ export default {
       this.onSlide();
     } else {
       if (!(location.href.includes('error') || location.href.includes('mitax'))) {
-        this.$store.commit('setStatePoster', true);
-        setCookie('advert', process.env.VUE_APP_VERSION, 1);
-        this.watchPoster = true;
+        setTimeout(() => {
+          this.$store.commit('setStatePoster', true);
+          setCookie('advert', process.env.VUE_APP_VERSION, 1);
+          this.watchPoster = true;
+        }, 1200);
       }
     }
   },
