@@ -104,6 +104,10 @@ export default {
         }
       });
     })
+
+    that.$nextTick(() => {
+      document.body.style.display = "block";
+    })
   },
   methods: {
     onSilder() {

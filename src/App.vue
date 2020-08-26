@@ -19,12 +19,6 @@ export default {
   components: {
     Header
   },
-  // created() {
-  //   process.env.NODE_ENV === "production" ? "" : injectScript("./statics/js/vconsole.min.js")
-  // },
-  mounted() {
-    document.body.style.display = "block";
-  },
   methods: {
     onSlider() {
       this.slider = true;

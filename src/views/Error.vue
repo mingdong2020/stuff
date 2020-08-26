@@ -7,7 +7,12 @@
 
 <script>
 export default {
-  name: "Error"
+  name: "Error",
+  mounted() {
+    this.$nextTick(() => {
+      document.body.style.display = "block";
+    })
+  }
 }
 </script>
 
