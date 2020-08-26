@@ -1,9 +1,9 @@
 <template>
   <div class="content">
-    <div class="header" ref="header" :style="$store.getters.getStateType ? 'background-color: transparent' : 'background-color: #ffffff;border-bottom: 1px solid #EEEEEE;'">
+    <div class="header" v-if="$store.getters.getStateHead" ref="header" :style="$store.getters.getStateType ? 'background-color: transparent' : 'background-color: #ffffff;border-bottom: 1px solid #EEEEEE;'">
       <div class="header-logo">
-        <img v-show="$store.getters.getStateType" src="~@/assets/image/logo-white.png" alt="" />
-        <img v-show="!$store.getters.getStateType" src="~@/assets/image/logo-black.png" alt="" />
+        <img v-show="$store.getters.getStateType" src="~@/assets/image/logo-white.png" alt="明动咨询" />
+        <img v-show="!$store.getters.getStateType" src="~@/assets/image/logo-black.png" alt="明动咨询" />
       </div>
       <div :class="$store.getters.getStateType ? 'header-menu menu-white' : 'header-menu'" @click="onToggle">
         <span></span>
@@ -11,7 +11,7 @@
         <span></span>
       </div>
     </div>
-    <div class="panel" :style="$store.getters.getStateType ? 'height:' + clientHeight + 'px;margin: 0;' : 'height:' + panelHeight + 'px;'">
+    <div class="panel" :style="[$store.getters.getStateType ? 'height:' + clientHeight + 'px;margin: 0;' : 'height:' + panelHeight + 'px;', $store.getters.getStateHead ? '' : 'margin: 0;']">
       <slot></slot>
     </div>
     <Options :toggle="$store.getters.getStateToggle" @btn-cancel="onToggle" />
@@ -61,9 +61,11 @@ export default {
     if (advert == process.env.VUE_APP_VERSION) {
       this.onSlide();
     } else {
-      this.$store.commit('setStatePoster', true);
-      setCookie('advert', process.env.VUE_APP_VERSION, 1);
-      this.watchPoster = true;
+      if ((location.href.includes('error') || location.href.includes('mitax'))) {
+        this.$store.commit('setStatePoster', true);
+        setCookie('advert', process.env.VUE_APP_VERSION, 1);
+        this.watchPoster = true;
+      }
     }
   },
   methods: {
@@ -77,11 +79,12 @@ export default {
     },
     onPoster() {
       this.$store.commit('setStatePoster', false);
-      this.$router.push({
+      this.$router.replace({
         name: 'Mitax'
       })
     },
     onSlide() {
+      console.log('slider999999', process.env.VUE_APP_DOAMIN);
       setTimeout(() => {
         this.$emit('btn-slider');
       }, 3600);

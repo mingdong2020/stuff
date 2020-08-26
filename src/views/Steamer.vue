@@ -1,7 +1,7 @@
 <template>
   <div class="steamer">
     <div class="steamer-banner">
-      <img src="~@/assets/image/steamer.jpg" alt="" />
+      <img src="~@/assets/image/steamer.jpg" alt="舟山公司注册" />
     </div>
     <div class="steamer-map">
       <div class="map-title">
@@ -10,13 +10,13 @@
         <span></span>
       </div>
       <div class="map-panel">
-        <img src="~@/assets/image/map.jpg" alt="" />
+        <img src="~@/assets/image/map.jpg" alt="舟山公司注册" />
         <p>舟山岛南部片区：25.35平方公里，舟山岛南部片区由新城区块、小干岛区块、沈家门区块、东港区块、朱家尖区块和相关海域组成。<em>重点发展大宗商品交易、航空制造、零部件物流、研发设计及相关配套产业，建设舟山航空产业园，着力发展水产品贸易、海洋旅游、海水利用、现代商贸、金融服务、航运、信息咨询、高新技术等产业。</em></p>
       </div>
       <div class="map-picture">
         <template v-for="(item, index) in pictureData">
           <div class="map-list" :key="index">
-            <img :src="item.image" alt="" />
+            <img :src="item.image" alt="明动咨询" />
           </div>
         </template>
       </div>
@@ -27,7 +27,7 @@
         <h3>选择我们的理由</h3>
         <span></span>
       </div>
-      <img src="~@/assets/image/choose.jpg" alt="">
+      <img src="~@/assets/image/choose.jpg" alt="明动咨询">
     </div>
     <div class="steamer-count">
       <div class="count-title">
@@ -65,16 +65,16 @@
           <div class="swiper-wrapper">
             <template v-for="(item, index) in bannerData">
               <div class="swiper-slide" :key="index">
-                <img :src="item.image" alt="" />
+                <img :src="item.image" alt="明动咨询" />
               </div>
             </template>
           </div>
         </div>
         <div class="arrow-left" @click="onArrow(true)">
-          <img src="~@/assets/image/arrow-l.png" alt="" />
+          <img src="~@/assets/image/arrow-l.png" alt="明动咨询" />
         </div>
         <div class="arrow-right" @click="onArrow(false)">
-          <img src="~@/assets/image/arrow-r.png" alt="" />
+          <img src="~@/assets/image/arrow-r.png" alt="明动咨询" />
         </div>
       </div>
     </div>
@@ -85,13 +85,13 @@
         <span></span>
       </div>
       <div class="coop-company">
-        <img src="~@/assets/image/coop01.jpg" alt="" />
-        <img src="~@/assets/image/coop02.jpg" alt="" />
-        <img src="~@/assets/image/coop03.jpg" alt="" />
-        <img src="~@/assets/image/coop04.jpg" alt="" />
-        <img src="~@/assets/image/coop05.jpg" alt="" />
-        <img src="~@/assets/image/coop06.jpg" alt="" />
-        <img src="~@/assets/image/coop07.jpg" alt="" />
+        <img src="~@/assets/image/coop01.jpg" alt="明动咨询" />
+        <img src="~@/assets/image/coop02.jpg" alt="明动咨询" />
+        <img src="~@/assets/image/coop03.jpg" alt="明动咨询" />
+        <img src="~@/assets/image/coop04.jpg" alt="明动咨询" />
+        <img src="~@/assets/image/coop05.jpg" alt="明动咨询" />
+        <img src="~@/assets/image/coop06.jpg" alt="明动咨询" />
+        <img src="~@/assets/image/coop07.jpg" alt="明动咨询" />
       </div>
     </div>
     <Dialog :data="resultData" @btn-dialog="onSure"/>

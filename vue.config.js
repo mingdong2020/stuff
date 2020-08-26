@@ -34,5 +34,9 @@ module.exports = {
     .use('url-loader')
       .loader('url-loader')
       .tap(options => Object.assign(options, { limit: 244 }))
+  },
+  devServer: {
+    port: '9988',
+    host: '172.31.1.200'
   }
 }

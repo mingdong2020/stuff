@@ -1,7 +1,7 @@
 <template>
   <div class="about">
     <div class="about-banner">
-      <img src="~@/assets/image/connect.jpg" alt="" />
+      <img src="~@/assets/image/connect.jpg" alt="明动咨询" />
     </div>
     <div class="about-connect">
       <h1>联系我们</h1>
@@ -16,7 +16,7 @@
     <div class="about-reach">
       <h1>如何到达【明动咨询】</h1>
       <div>
-        <img src="~@/assets/image/reach.png" alt="" />
+        <img src="~@/assets/image/reach.jpg" alt="明动咨询地址" />
       </div>
     </div>
     <div class="about-culture">
@@ -32,7 +32,7 @@
         <h3>服务热线：</h3>
         <p>400-888-7899</p>
       </div>
-      <img src="~@/assets/image/wechat.png" alt="">
+      <img src="~@/assets/image/wechat.png" alt="明动咨询公众号">
     </div>
   </div>
 </template>

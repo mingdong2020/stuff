@@ -2,7 +2,7 @@
   <div class="poster" v-show="cover" ref="poster">
     <div class="poster-panel" ref="panel" @click="onPoster">
       <div class="poster-cancel" @click="onCancel">
-        <img src="~@/assets/image/cancel.png" alt="" />
+        <img src="~@/assets/image/cancel.png" alt="明动咨询" />
       </div>
     </div>
   </div>
@@ -41,8 +41,9 @@ export default {
   mounted() {
   },
   methods: {
-    onCancel() {
+    onCancel(e) {
       this.$emit("btn-cancel");
+      e.stopPropagation();
     },
     onPoster() {
       this.$emit("btn-poster");

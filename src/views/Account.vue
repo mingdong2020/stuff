@@ -1,7 +1,7 @@
 <template>
   <div class="account">
     <div class="account-banner">
-      <img src="~@/assets/image/agency.jpg" alt="" />
+      <img src="~@/assets/image/agency.jpg" alt="财务代理" />
     </div>
     <!--【原因】-->
     <div class="account-reason">
@@ -12,7 +12,7 @@
       <template v-for="(item, index) in reasonData">
         <div :key="index" class="account-list">
           <div class="account-item">
-            <img :src="item.image" alt="" />
+            <img :src="item.image" alt="明动咨询为您服务" />
             <span :class="'item-label' + index">{{ item.birth }}</span>
           </div>
           <p>{{ item.article }}</p>
@@ -31,7 +31,7 @@
             <h3>{{ item.name }}</h3>
             <div>
               <p>{{ item.article }}</p>
-              <img :src="item.image" alt="" />
+              <img :src="item.image" alt="明动咨询服务优势" />
             </div>
           </div>
         </template>

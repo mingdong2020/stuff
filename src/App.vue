@@ -8,7 +8,7 @@
 
 <script>
 import { injectScript } from '@/assets/js/usualUtils.js'
-import Header from "@/components/Header.vue"
+import Header from '@/components/Header.vue'
 export default {
   name: "App",
   data() {
@@ -23,7 +23,6 @@ export default {
     process.env.NODE_ENV === "production" ? "" : injectScript("./statics/js/vconsole.min.js")
   },
   mounted() {
-    console.log(this.$store.getters.getStateIosBar, "ssss");
     document.body.style.display = "block";
   },
   methods: {
@@ -49,12 +48,12 @@ html, body {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
-  -webkit-touch-callout:none;  /*系统默认菜单被禁用*/
-  -webkit-user-select:none; /*webkit浏览器*/
-  -khtml-user-select:none; /*早期浏览器*/
-  -moz-user-select:none; /*火狐*/
-  -ms-user-select:none;  /*IE10*/
-  user-select:none;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 html, body {
   background-color: #ffffff;

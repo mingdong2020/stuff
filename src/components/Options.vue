@@ -3,13 +3,13 @@
     <div class="options-blank" @click="onCancel"></div>
     <div ref="panel" class="options-panel">
       <div class="options-head" @click="onCancel">
-        <img src="~@/assets/image/conceal.png" alt="" />
+        <img src="~@/assets/image/conceal.png" alt="明动咨询" />
       </div>
       <div class="options-box">
         <template v-for="(item, index) in list">
-          <router-link :to="item.path" class="options-list" :key="index">
+          <router-link :to="{ path: item.path }" replace active-class="options-list-active" class="options-list" :key="index">
             <span>{{ item.name }}</span>
-            <img src="~@/assets/image/boult.png" alt="" />
+            <img src="~@/assets/image/boult.png" alt="明动咨询" />
           </router-link>
         </template>
       </div>
@@ -114,6 +114,11 @@ export default {
         > img {
           width: 0.12rem;
           height: 0.2rem;
+        }
+      }
+      .options-list-active {
+        > span {
+          opacity: 0.68;
         }
       }
     }

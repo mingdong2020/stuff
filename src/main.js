@@ -6,6 +6,9 @@ import store from './store'
 import './assets/js/baseUtils.js'
 
 router.beforeEach((to, from, next) => {
+  if (to.name == 'Error') {
+    store.commit('setStateHead', false);
+  }
   if (to.name == 'Home') {
     store.commit('setStateType', true);
   } else {

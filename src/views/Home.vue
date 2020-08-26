@@ -10,7 +10,7 @@
             <h1>实现更大的经济效益！</h1>
           </div>
           <div class="slide-arrow" @click="onSilder">
-            <img src="~@/assets/image/arrow.png" alt="" />
+            <img src="~@/assets/image/arrow.png" alt="明动咨询" />
           </div>
         </div>
         <div class="swiper-slide slide-inpuk">
@@ -22,8 +22,8 @@
             <h2>我们的业务</h2>
             <div class="slide-grid">
               <template v-for="(item, index) in listData">
-                <router-link class="slide-list" :to="item.path" :key="index">
-                  <img :src="item.image" alt="" />
+                <router-link class="slide-list" :to="{ path: item.path }" replace :key="index">
+                  <img :src="item.image" alt="明动咨询" />
                   <span>{{ item.name }}</span>
                 </router-link>
               </template>
@@ -55,7 +55,6 @@ export default {
       bannerRatio: false, // 首屏图片自适应
       hasHandler: false, // 用户是否手动滑动过
       listData: [
-        // {name: '首页', path: '/', image: require("./../assets/image/home1.png")},
         {name: '财务代理', path: '/account', image: require("./../assets/image/home2.png")},
         {name: '园区直招', path: '/garden', image: require("./../assets/image/home3.png")},
         {name: '爱税筹', path: '/mitax', image: require("./../assets/image/home4.png")},
@@ -78,7 +77,6 @@ export default {
     let that = this;
     that.clientWidth = window.innerWidth;
     that.clientHeight = window.innerHeight;
-    console.log(that.clientWidth, that.clientHeight, (that.clientWidth / that.clientHeight).toFixed(2), "that.clientHeight");
     // 底图自适应
     const imgWidth = 750;
     const imgHeight = 1334;
@@ -92,21 +90,20 @@ export default {
     } else if ((that.clientWidth / that.clientHeight).toFixed(2) <= '0.52') {
       that.clientRatio = 2;
     }
-
-    console.log(that.clientRatio, "@@");
-
     // 初始化模块
-    that.bannerSwiper = new Swiper('.home .swiper-container', {
-      mousewheel: true,
-      direction: 'vertical',
-      height: that.clientHeight,
-      on: {
-        slideChangeTransitionStart: function() {
-          that.hasHandler = true;
-          that.$store.commit('setStateType', this.activeIndex == 0 ? true : false);
+    that.$nextTick(() => {
+      that.bannerSwiper = new Swiper('.home .swiper-container', {
+        mousewheel: true,
+        direction: 'vertical',
+        height: that.clientHeight,
+        on: {
+          slideChangeTransitionStart: function() {
+            that.hasHandler = true;
+            that.$store.commit('setStateType', this.activeIndex == 0 ? true : false);
+          }
         }
-      }
-    });
+      });
+    })
   },
   methods: {
     onSilder() {

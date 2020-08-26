@@ -17,7 +17,7 @@
       </div>
     </div>
     <div class="garden-question">
-      <img src="~@/assets/image/garden.jpg" alt="" />
+      <img src="~@/assets/image/garden.jpg" alt="园区注册" />
     </div>
     <div class="garden-count">
       <div class="garden-head">
