@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import { injectScript } from '@/assets/js/usualUtils.js'
+// import { injectScript } from '@/assets/js/usualUtils.js'
 import Header from '@/components/Header.vue'
 export default {
   name: "App",
@@ -19,9 +19,9 @@ export default {
   components: {
     Header
   },
-  created() {
-    process.env.NODE_ENV === "production" ? "" : injectScript("./statics/js/vconsole.min.js")
-  },
+  // created() {
+  //   process.env.NODE_ENV === "production" ? "" : injectScript("./statics/js/vconsole.min.js")
+  // },
   mounted() {
     document.body.style.display = "block";
   },

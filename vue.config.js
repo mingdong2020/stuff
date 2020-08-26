@@ -9,7 +9,7 @@ module.exports = {
     plugins: [
       new PrerenderSPAPlugin({
         staticDir: path.join(__dirname, 'dist'),
-        routes: [ '/', '/account', '/garden', '/mitax', '/steamer', '/about' ],
+        routes: [ '/', '/account', '/garden', '/mitax', '/steamer', '/about', '/error' ],
         postProcessHtml: (context) => {
           const inform = {
             '/': seoConfig['home'],
@@ -34,9 +34,5 @@ module.exports = {
     .use('url-loader')
       .loader('url-loader')
       .tap(options => Object.assign(options, { limit: 244 }))
-  },
-  devServer: {
-    port: '9988',
-    host: '172.31.1.200'
   }
 }

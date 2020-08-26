@@ -7,10 +7,10 @@
       </div>
       <div class="options-box">
         <template v-for="(item, index) in list">
-          <router-link :to="{ path: item.path }" replace active-class="options-list-active" class="options-list" :key="index">
+          <div @click="onRouter(item.path)" :class="$store.getters.getStateIndex == index ? 'options-list options-list-active' : 'options-list'" :key="index">
             <span>{{ item.name }}</span>
             <img src="~@/assets/image/boult.png" alt="明动咨询" />
-          </router-link>
+          </div>
         </template>
       </div>
     </div>
@@ -56,6 +56,11 @@ export default {
   methods: {
     onCancel() {
       this.$emit('btn-cancel');
+    },
+    onRouter(path) {
+      this.$router.replace({
+        path: path
+      })
     }
   }
 }
@@ -118,7 +123,7 @@ export default {
       }
       .options-list-active {
         > span {
-          opacity: 0.68;
+          color: #de2128;
         }
       }
     }

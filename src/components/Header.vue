@@ -11,7 +11,7 @@
         <span></span>
       </div>
     </div>
-    <div class="panel" :style="[$store.getters.getStateType ? 'height:' + clientHeight + 'px;margin: 0;' : 'height:' + panelHeight + 'px;', $store.getters.getStateHead ? '' : 'margin: 0;']">
+    <div class="panel" id="scroll" :style="[$store.getters.getStateType ? 'height:' + clientHeight + 'px;margin: 0;' : 'height:' + panelHeight + 'px;', $store.getters.getStateHead ? '' : 'margin: 0;']">
       <slot></slot>
     </div>
     <Options :toggle="$store.getters.getStateToggle" @btn-cancel="onToggle" />
@@ -34,7 +34,7 @@ export default {
       clientHeight: 0,
       panelHeight: 0,
       watchPoster: false,
-      watchCancel: false,
+      watchCancel: false
     }
   },
   watch: {
@@ -61,7 +61,7 @@ export default {
     if (advert == process.env.VUE_APP_VERSION) {
       this.onSlide();
     } else {
-      if ((location.href.includes('error') || location.href.includes('mitax'))) {
+      if (!(location.href.includes('error') || location.href.includes('mitax'))) {
         this.$store.commit('setStatePoster', true);
         setCookie('advert', process.env.VUE_APP_VERSION, 1);
         this.watchPoster = true;
@@ -84,9 +84,10 @@ export default {
       })
     },
     onSlide() {
-      console.log('slider999999', process.env.VUE_APP_DOAMIN);
       setTimeout(() => {
-        this.$emit('btn-slider');
+        if (this.$store.getters.getStateIndex == 0) {
+          this.$emit('btn-slider');
+        }
       }, 3600);
     }
   }

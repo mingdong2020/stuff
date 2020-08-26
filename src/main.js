@@ -4,6 +4,9 @@ import './registerServiceWorker'
 import router from './router'
 import store from './store'
 import './assets/js/baseUtils.js'
+import { injectScript } from '@/assets/js/usualUtils.js'
+
+process.env.NODE_ENV === "production" ? "" : injectScript("/statics/js/vconsole.min.js")
 
 router.beforeEach((to, from, next) => {
   if (to.name == 'Error') {
@@ -15,6 +18,8 @@ router.beforeEach((to, from, next) => {
     store.commit('setStateType', false);
   }
   store.commit('setStateToggle', false);
+
+  store.commit('setStateIndex', to.meta.key || 0);
   next();
 })
 

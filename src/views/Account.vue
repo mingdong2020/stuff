@@ -119,6 +119,10 @@ export default {
         }
       ]
     }
+  },
+  mounted() {
+    // 内滚动还原
+    document.getElementById('scroll').scrollTo(0, 0);
   }
 }
 </script>

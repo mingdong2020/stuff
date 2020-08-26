@@ -84,3 +84,14 @@ export function isIos() {
   var os = GetQueryString('os');
   return isiOS || (os == 'ios');
 }
+
+/**
+ * 判断pc端还是移动端
+ */
+export function isMobile() {
+  if (/(iPhone|iPad|iPod|iOS|Android)/i.test(navigator.userAgent)) {
+    return true;
+  } else {
+    return false;
+  }
+}

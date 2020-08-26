@@ -22,10 +22,10 @@
             <h2>我们的业务</h2>
             <div class="slide-grid">
               <template v-for="(item, index) in listData">
-                <router-link class="slide-list" :to="{ path: item.path }" replace :key="index">
+                <div class="slide-list" @click="onRouter(item.path)" :key="index">
                   <img :src="item.image" alt="明动咨询" />
                   <span>{{ item.name }}</span>
-                </router-link>
+                </div>
               </template>
             </div>
           </div>
@@ -111,6 +111,11 @@ export default {
         this.bannerSwiper.slideTo(1, 1000, false);
         this.$store.commit('setStateType', false);
       }
+    },
+    onRouter(path) {
+      this.$router.replace({
+        path: path
+      })
     }
   }
 }

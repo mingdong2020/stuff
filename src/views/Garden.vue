@@ -77,6 +77,10 @@ export default {
       btnStatus: true
     }
   },
+  mounted() {
+    // 内滚动还原
+    document.getElementById('scroll').scrollTo(0, 0);
+  },
   methods: {
     onCount() {
       let that = this;

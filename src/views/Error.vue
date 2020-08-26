@@ -1,5 +1,5 @@
 <template>
-  <div class="error" @scroll="onScroll">
+  <div class="error">
     <img src="~@/assets/image/empty.png" alt="明动咨询" />
     <span>Error {{ $route.params.code }}</span>
   </div>
@@ -7,12 +7,7 @@
 
 <script>
 export default {
-  name: "Error",
-  methods: {
-    onScroll() {
-      document.title = 'aaa';
-    }
-  }
+  name: "Error"
 }
 </script>
 

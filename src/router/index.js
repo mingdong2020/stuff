@@ -5,31 +5,49 @@ const routes = [
   {
     path: '/',
     name: 'Home',
+    meta: {
+      key: 0
+    },
     component: Home
   },
   {
     path: '/account',
     name: 'Account',
+    meta: {
+      key: 1
+    },
     component: () => import(/* webpackChunkName: "account" */ '../views/Account.vue')
   },
   {
     path: '/garden',
     name: 'Garden',
+    meta: {
+      key: 2
+    },
     component: () => import(/* webpackChunkName: "garden" */ '../views/Garden.vue')
   },
   {
     path: '/mitax',
     name: 'Mitax',
+    meta: {
+      key: 3
+    },
     component: () => import(/* webpackChunkName: "mitax" */ '../views/Mitax.vue')
   },
   {
     path: '/steamer',
     name: 'Steamer',
+    meta: {
+      key: 4
+    },
     component: () => import(/* webpackChunkName: "steamer" */ '../views/Steamer.vue')
   },
   {
     path: '/about',
     name: 'About',
+    meta: {
+      key: 5
+    },
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
