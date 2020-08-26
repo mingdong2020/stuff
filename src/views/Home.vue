@@ -103,10 +103,10 @@ export default {
           }
         }
       });
-    })
 
-    that.$nextTick(() => {
-      document.body.style.display = "block";
+      setTimeout(() => {
+        document.body.style.display = "block";
+      }, 300);
     })
   },
   methods: {
