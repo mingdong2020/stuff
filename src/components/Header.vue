@@ -77,6 +77,9 @@ export default {
     },
     onPoster() {
       this.$store.commit('setStatePoster', false);
+      this.$router.push({
+        name: 'Mitax'
+      })
     },
     onSlide() {
       setTimeout(() => {
@@ -150,6 +153,7 @@ export default {
   }
   .panel {
     margin: 1.18rem 0 0 0;
+    background-color: #ffffff;
     overflow-y: scroll;
   }
 }

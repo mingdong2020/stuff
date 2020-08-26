@@ -14,7 +14,7 @@
           </div>
         </div>
         <div class="swiper-slide slide-inpuk">
-          <div class="slide-inform">
+          <div class="slide-inform" :style="clientRatio == 1 ? 'margin: 0.44rem auto 0 auto;' : 'margin: 1.34rem auto 0 auto;'">
             <h3>明动咨询成立于2013年10月18日, 是第一批入驻上海自贸区的咨询行业公司。</h3><br>
             <h3>我们主要服务于中国(上海)自由贸易试验区的招商引资、客户运营咨询，资产管理、投资管理、融资租赁、商业保理以及其他类金融行业咨询服务。</h3>
           </div>
@@ -48,6 +48,7 @@ export default {
   },
   data() {
     return {
+      clientRatio: 1, // 1 正常屏幕 2 高屏幕
       clientWidth: 0,
       clientHeight: 0,
       bannerSwiper: Object,
@@ -77,6 +78,7 @@ export default {
     let that = this;
     that.clientWidth = window.innerWidth;
     that.clientHeight = window.innerHeight;
+    console.log(that.clientWidth, that.clientHeight, (that.clientWidth / that.clientHeight).toFixed(2), "that.clientHeight");
     // 底图自适应
     const imgWidth = 750;
     const imgHeight = 1334;
@@ -84,6 +86,15 @@ export default {
     if (imgHeightActual < that.clientHeight) {
       that.bannerRatio = true;
     }
+    // 小屏幕大屏幕适配
+    if ((that.clientWidth / that.clientHeight).toFixed(2) >= '0.62') {
+      that.clientRatio = 1;
+    } else if ((that.clientWidth / that.clientHeight).toFixed(2) <= '0.52') {
+      that.clientRatio = 2;
+    }
+
+    console.log(that.clientRatio, "@@");
+
     // 初始化模块
     that.bannerSwiper = new Swiper('.home .swiper-container', {
       mousewheel: true,
@@ -245,7 +256,7 @@ export default {
         }
         .slide-statement {
           position: absolute;
-          bottom: 2rem;
+          bottom: 1.72rem;
           left: 0;
           margin: 0.42rem 0 0 0;
           width: 100%;

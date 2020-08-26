@@ -16,3 +16,14 @@
   win.addEventListener(resizeEvt, recalc, false);
   recalc();
 })(document, window);
+
+// 网页处理
+document.oncontextmenu = () => {
+    return false;
+}
+document.onselectstart = () => {
+    return false;
+}
+document.oncopy = () => {
+    return false;
+}

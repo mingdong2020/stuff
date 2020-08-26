@@ -245,7 +245,6 @@ export default {
   .account-cooperation {
     padding: 0.68rem 0 0.48rem 0;
     border-top: 1px solid #EEEEEE;
-    background-color: #EEEEEE;
     .account-circle {
       margin: 0.48rem auto 0 auto;
       position: relative;

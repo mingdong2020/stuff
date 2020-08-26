@@ -1,6 +1,7 @@
 const path = require('path')
 const seoConfig = require('./config.json')
 const PrerenderSPAPlugin = require('prerender-spa-plugin')
+console.log("seoConfig");
 module.exports = {
   publicPath: '/',
   productionSourceMap: process.env.NODE_ENV === "production" ? false : true,

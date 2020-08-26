@@ -20,7 +20,11 @@ export default {
     Header
   },
   created() {
-    process.env.NODE_ENV === "production" ? "" : injectScript("./statics/js/vconsole.min.js");
+    process.env.NODE_ENV === "production" ? "" : injectScript("./statics/js/vconsole.min.js")
+  },
+  mounted() {
+    console.log(this.$store.getters.getStateIosBar, "ssss");
+    document.body.style.display = "block";
   },
   methods: {
     onSlider() {
@@ -31,7 +35,10 @@ export default {
 </script>
 
 <style>
-*, html, body {
+html, body {
+  height: 100%;
+}
+* {
   margin: 0;
   padding: 0;
   font-size: 0.32rem;
@@ -42,9 +49,18 @@ export default {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
   -webkit-overflow-scrolling: touch;
+  -webkit-touch-callout:none;  /*系统默认菜单被禁用*/
+  -webkit-user-select:none; /*webkit浏览器*/
+  -khtml-user-select:none; /*早期浏览器*/
+  -moz-user-select:none; /*火狐*/
+  -ms-user-select:none;  /*IE10*/
+  user-select:none;
 }
 html, body {
   background-color: #ffffff;
+}
+input {
+  -webkit-user-select: auto;
 }
 img{
   display: block;
