@@ -1,34 +1,34 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7ab1c4fc741c69f38729",
+    "revision": "51675fa4d2edab5946a2",
     "url": "/css/about.cd227544.css"
   },
   {
-    "revision": "cd38495de9c8f60384dd",
+    "revision": "2d1656047696b069f961",
     "url": "/css/account.98bc8c40.css"
   },
   {
-    "revision": "f744e7390e5c9c8a9c9f",
-    "url": "/css/app.42c9770c.css"
+    "revision": "ae5a5b2298347bcf0151",
+    "url": "/css/app.2d553370.css"
   },
   {
-    "revision": "8b5078f3ccaddf110f46",
+    "revision": "c497eac6736b2674ba10",
     "url": "/css/chunk-vendors.7ae7c704.css"
   },
   {
-    "revision": "2be03a7446547f2a7a59",
+    "revision": "c7f5e5cd74bc7590d110",
     "url": "/css/error.73347020.css"
   },
   {
-    "revision": "ba9c55e9c3dde2396263",
+    "revision": "7d78731627b4ba49952b",
     "url": "/css/garden.95ad0d48.css"
   },
   {
-    "revision": "f19c25aa508d7548051b",
+    "revision": "e9f5edaa16e92553e3cd",
     "url": "/css/mitax.5b98c8f0.css"
   },
   {
-    "revision": "c337a53faade24557611",
+    "revision": "e9f325d3fb2895e2b88d",
     "url": "/css/steamer.808cbae1.css"
   },
   {
@@ -220,43 +220,55 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/wechat.aa80fc0c.png"
   },
   {
-    "revision": "30340fcfedad9ed7bc67f563b1c58b00",
+    "revision": "64cdda00315fd30749f11f1684c059df",
     "url": "/index.html"
   },
   {
-    "revision": "7ab1c4fc741c69f38729",
-    "url": "/js/about-legacy.cc841f3d.js"
+    "revision": "51675fa4d2edab5946a2",
+    "url": "/js/about.2cfd9d7e.js"
   },
   {
-    "revision": "cd38495de9c8f60384dd",
-    "url": "/js/account-legacy.9c38feda.js"
+    "revision": "2d1656047696b069f961",
+    "url": "/js/account.2f675388.js"
   },
   {
-    "revision": "f744e7390e5c9c8a9c9f",
-    "url": "/js/app-legacy.2bd2ee2f.js"
+    "revision": "ae5a5b2298347bcf0151",
+    "url": "/js/app.3336faac.js"
   },
   {
-    "revision": "8b5078f3ccaddf110f46",
-    "url": "/js/chunk-vendors-legacy.36ceb2fc.js"
+    "revision": "c497eac6736b2674ba10",
+    "url": "/js/chunk-vendors.ada56598.js"
   },
   {
-    "revision": "2be03a7446547f2a7a59",
-    "url": "/js/error-legacy.8ede4601.js"
+    "revision": "c7f5e5cd74bc7590d110",
+    "url": "/js/error.bd538a77.js"
   },
   {
-    "revision": "ba9c55e9c3dde2396263",
-    "url": "/js/garden-legacy.59ef123c.js"
+    "revision": "7d78731627b4ba49952b",
+    "url": "/js/garden.fefb5246.js"
   },
   {
-    "revision": "f19c25aa508d7548051b",
-    "url": "/js/mitax-legacy.8045e0f0.js"
+    "revision": "e9f5edaa16e92553e3cd",
+    "url": "/js/mitax.91dd16e2.js"
   },
   {
-    "revision": "c337a53faade24557611",
-    "url": "/js/steamer-legacy.a7e84764.js"
+    "revision": "e9f325d3fb2895e2b88d",
+    "url": "/js/steamer.5fb42124.js"
   },
   {
     "revision": "dfa23a797b6dc19de20548e352bc023b",
     "url": "/manifest.json"
+  },
+  {
+    "revision": "bd1ee9db2116ab082898f790376a8091",
+    "url": "/robots.txt"
+  },
+  {
+    "revision": "c994c660e96712c53437ca51b05bbebf",
+    "url": "/sitemap.txt"
+  },
+  {
+    "revision": "54d30c6cbe1329308703f6b14026f7e0",
+    "url": "/statics/js/vconsole.min.js"
   }
 ]);

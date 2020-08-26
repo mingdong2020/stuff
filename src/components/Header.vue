@@ -20,7 +20,8 @@
 </template>
 
 <script>
-import { getCookie, setCookie } from '@/assets/js/usualUtils.js'
+import { getCookie } from '@/assets/js/usualUtils.js'
+// import { getCookie, setCookie } from '@/assets/js/usualUtils.js'
 import Poster from '@/components/Poster.vue'
 import Options from '@/components/Options.vue'
 export default {
@@ -63,9 +64,9 @@ export default {
     } else {
       if (!(location.href.includes('error') || location.href.includes('mitax'))) {
         setTimeout(() => {
-          this.$store.commit('setStatePoster', true);
-          setCookie('advert', process.env.VUE_APP_VERSION, 1);
-          this.watchPoster = true;
+          // this.$store.commit('setStatePoster', true);
+          // setCookie('advert', process.env.VUE_APP_VERSION, 1);
+          // this.watchPoster = true;
         }, 1200);
       }
     }
