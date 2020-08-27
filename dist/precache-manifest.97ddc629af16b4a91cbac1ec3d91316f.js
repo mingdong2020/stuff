@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/account.98bc8c40.css"
   },
   {
-    "revision": "e4d55b91697e15bab83e",
+    "revision": "1e24fd9abddfbe57fdba",
     "url": "/css/app.6d0b5a9c.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/mitax.5b98c8f0.css"
   },
   {
-    "revision": "e9f325d3fb2895e2b88d",
+    "revision": "2d05c06a548367cecce6",
     "url": "/css/steamer.808cbae1.css"
   },
   {
@@ -56,20 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/agency.907b9fab.jpg"
   },
   {
-    "revision": "c4466868f3341765b4353cbc1e54ef75",
-    "url": "/img/arrow-l.c4466868.png"
-  },
-  {
-    "revision": "9a6ebdc827f2540fe4fc53a35191523a",
-    "url": "/img/arrow-r.9a6ebdc8.png"
-  },
-  {
     "revision": "7717ac48441ebc8887cbb63759299895",
     "url": "/img/banner.7717ac48.jpg"
-  },
-  {
-    "revision": "669ccd08952852c71157bfdba38d456e",
-    "url": "/img/cancel.669ccd08.png"
   },
   {
     "revision": "800b26fa1e36241d31d7da40e7adc191",
@@ -164,10 +152,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/government.d5a0559d.jpg"
   },
   {
-    "revision": "82f03a57cc9adb84e7a37d0a19b21706",
-    "url": "/img/home2.82f03a57.png"
-  },
-  {
     "revision": "e9598fdb87f067c14efeeb6c66f33f1a",
     "url": "/img/home3.e9598fdb.png"
   },
@@ -220,7 +204,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/wechat.aa80fc0c.png"
   },
   {
-    "revision": "a0bd27bf49d0214dcae227d2333164b3",
+    "revision": "8524c044ceddcdd942a9a06b955df4e3",
     "url": "/index.html"
   },
   {
@@ -232,8 +216,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/account.2f675388.js"
   },
   {
-    "revision": "e4d55b91697e15bab83e",
-    "url": "/js/app.0ec34bb0.js"
+    "revision": "1e24fd9abddfbe57fdba",
+    "url": "/js/app.dbcb6316.js"
   },
   {
     "revision": "c497eac6736b2674ba10",
@@ -252,8 +236,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/mitax.91dd16e2.js"
   },
   {
-    "revision": "e9f325d3fb2895e2b88d",
-    "url": "/js/steamer.5fb42124.js"
+    "revision": "2d05c06a548367cecce6",
+    "url": "/js/steamer.128ee7f3.js"
   },
   {
     "revision": "dfa23a797b6dc19de20548e352bc023b",

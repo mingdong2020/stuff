@@ -16,6 +16,7 @@
     </div>
     <Options :toggle="$store.getters.getStateToggle" @btn-cancel="onToggle" />
     <Poster :toggle="$store.getters.getStatePoster" @btn-cancel="onCancel" @btn-poster="onPoster" />
+    <Giftbag :toggle="$store.getters.getStateGiftbag" @btn-cancel="onClose" />
   </div>
 </template>
 
@@ -23,11 +24,13 @@
 import { getCookie, setCookie } from '@/assets/js/usualUtils.js'
 import Poster from '@/components/Poster.vue'
 import Options from '@/components/Options.vue'
+import Giftbag from '@/components/Giftbag.vue'
 export default {
   name: 'Header',
   components: {
     Poster,
-    Options
+    Options,
+    Giftbag
   },
   data() {
     return {
@@ -69,6 +72,16 @@ export default {
         }, 2400);
       }
     }
+    // 每12秒显示一次
+    let timeStamp = (new Date()).getTime();
+    setCookie('expiredTime', timeStamp + 12000, 1);
+    setInterval(() => {
+      let nowTime = (new Date()).getTime();
+      if (nowTime >= getCookie('expiredTime') && !location.href.includes('error') && !this.$store.getters.getStateGiftbag && !this.$store.getters.getStatePoster) {
+        setCookie('expiredTime', nowTime + 12000, 1);
+        this.$store.commit('setStateGiftbag', true);
+      }
+    }, 3000);
   },
   methods: {
     onToggle() {
@@ -91,6 +104,9 @@ export default {
           this.$emit('btn-slider');
         }
       }, 3600);
+    },
+    onClose() {
+      this.$store.commit('setStateGiftbag', false);
     }
   }
 }

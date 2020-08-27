@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/account.98bc8c40.css"
   },
   {
-    "revision": "afd5926544f28d97b8d9",
+    "revision": "529e689df7ed14b71b35",
     "url": "/css/app.25ba0cb3.css"
   },
   {
@@ -28,7 +28,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/mitax.5b98c8f0.css"
   },
   {
-    "revision": "c337a53faade24557611",
+    "revision": "149709e466fa928c24b3",
     "url": "/css/steamer.808cbae1.css"
   },
   {
@@ -56,20 +56,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/agency.907b9fab.jpg"
   },
   {
-    "revision": "c4466868f3341765b4353cbc1e54ef75",
-    "url": "/img/arrow-l.c4466868.png"
-  },
-  {
-    "revision": "9a6ebdc827f2540fe4fc53a35191523a",
-    "url": "/img/arrow-r.9a6ebdc8.png"
-  },
-  {
     "revision": "7717ac48441ebc8887cbb63759299895",
     "url": "/img/banner.7717ac48.jpg"
-  },
-  {
-    "revision": "669ccd08952852c71157bfdba38d456e",
-    "url": "/img/cancel.669ccd08.png"
   },
   {
     "revision": "800b26fa1e36241d31d7da40e7adc191",
@@ -164,10 +152,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/government.d5a0559d.jpg"
   },
   {
-    "revision": "82f03a57cc9adb84e7a37d0a19b21706",
-    "url": "/img/home2.82f03a57.png"
-  },
-  {
     "revision": "e9598fdb87f067c14efeeb6c66f33f1a",
     "url": "/img/home3.e9598fdb.png"
   },
@@ -220,7 +204,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/wechat.aa80fc0c.png"
   },
   {
-    "revision": "d77f014e00da5aa20763210d5f5aed7a",
+    "revision": "62be10e3127f8aee4dc980e821dd1f23",
     "url": "/index.html"
   },
   {
@@ -232,8 +216,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/account-legacy.9c38feda.js"
   },
   {
-    "revision": "afd5926544f28d97b8d9",
-    "url": "/js/app-legacy.e5ece6ee.js"
+    "revision": "529e689df7ed14b71b35",
+    "url": "/js/app-legacy.81b7d103.js"
   },
   {
     "revision": "8b5078f3ccaddf110f46",
@@ -252,8 +236,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/mitax-legacy.8045e0f0.js"
   },
   {
-    "revision": "c337a53faade24557611",
-    "url": "/js/steamer-legacy.a7e84764.js"
+    "revision": "149709e466fa928c24b3",
+    "url": "/js/steamer-legacy.8756df85.js"
   },
   {
     "revision": "dfa23a797b6dc19de20548e352bc023b",
