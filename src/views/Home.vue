@@ -96,6 +96,8 @@ export default {
         mousewheel: true,
         direction: 'vertical',
         height: that.clientHeight,
+        observer: true,
+        observeParents: true,
         on: {
           slideChangeTransitionStart: function() {
             that.hasHandler = true;

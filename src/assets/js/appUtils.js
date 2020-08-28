@@ -1,3 +1,50 @@
+/*
+  常用逻辑方法集合
+*/
+import axios from 'axios'
+import qs from 'qs'
+
+/**
+ * axios请求接口
+ * @param {parm} Object 请求参数
+ */
+export function axiosFetch(parm) {
+  parm.load ? loadedBox(true, parm.load) : null;
+  return new Promise((ret, rej) => {
+    const instance = axios.create({
+      baseURL: "http://localhost:8000",
+      timeout: 6000,
+      headers: {
+        // "Access-Control-Allow-Origin": "*",
+        // "Access-Control-Allow-Methods": "GET, POST",
+        // "Access-Control-Allow-Headers": "Authorization, Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since, X-Requested-With"
+      },
+    });
+
+    const config = {
+      method: parm.method,
+      url: parm.url,
+      data: qs.stringify({
+        ...parm.params
+      })
+    }
+
+    instance.request(config)
+    .then((res) => {
+      if (res.status == "200") {
+        ret(res.data);
+      } else {
+        rej(res);
+      }
+      parm.load ? loadedBox(false) : null;
+    })
+    .catch((err) => {
+      rej(err);
+      parm.load ? loadedBox(false) : null;
+    })
+  })
+}
+
 /**
  * 【共用方法】toast
  */

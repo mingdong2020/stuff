@@ -34,5 +34,31 @@ module.exports = {
     .use('url-loader')
       .loader('url-loader')
       .tap(options => Object.assign(options, { limit: 244 }))
+  },
+  devServer: {
+    hot: true,
+    https: false,
+    hotOnly: true,
+    headers: {
+        'X-Requested-With': 'XMLHttpRequest'
+    },
+    contentBase: path.join(__dirname, 'dist'),
+    compress: true,
+    port: 80,
+    open: false,
+    allowedHosts: [
+        'http://localhost:8000'
+    ],
+    proxy:{
+        '/api': {
+            target: 'http://localhost:8000',
+            ws: true,
+            changeOrigin: true,
+            pathRewrite: {
+              '^/api' : ''
+            }
+        }
+    }, //设置代理
+    before: app=> {}
   }
 }

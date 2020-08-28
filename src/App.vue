@@ -7,7 +7,6 @@
 </template>
 
 <script>
-// import { injectScript } from '@/assets/js/usualUtils.js'
 import Header from '@/components/Header.vue'
 export default {
   name: "App",
@@ -52,8 +51,11 @@ html, body {
 html, body {
   background-color: #ffffff;
 }
-input {
+input, textarea {
+  padding: 0;
+  margin: 0;
   -webkit-user-select: auto;
+  -webkit-appearance: none;
 }
 img{
   display: block;

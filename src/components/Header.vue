@@ -3,7 +3,7 @@
     <div class="header" v-if="$store.getters.getStateHead" ref="header" :style="$store.getters.getStateType ? 'background-color: transparent' : 'background-color: #ffffff;border-bottom: 1px solid #EEEEEE;'">
       <div class="header-logo">
         <img v-show="$store.getters.getStateType" src="~@/assets/image/logo-white.png" alt="明动咨询" />
-        <img v-show="!$store.getters.getStateType" src="~@/assets/image/logo-black.png" alt="明动咨询" />
+        <img v-show="!$store.getters.getStateType" src="~@/assets/image/logo-white.png" alt="明动咨询" />
       </div>
       <div :class="$store.getters.getStateType ? 'header-menu menu-white' : 'header-menu'" @click="onToggle">
         <span></span>
@@ -74,11 +74,11 @@ export default {
     }
     // 每12秒显示一次
     let timeStamp = (new Date()).getTime();
-    setCookie('expiredTime', timeStamp + 12000, 1);
+    setCookie('expiredTime', timeStamp + 1200, 1);
     setInterval(() => {
       let nowTime = (new Date()).getTime();
-      if (nowTime >= getCookie('expiredTime') && !location.href.includes('error') && !this.$store.getters.getStateGiftbag && !this.$store.getters.getStatePoster) {
-        setCookie('expiredTime', nowTime + 12000, 1);
+      if (nowTime >= getCookie('expiredTime') && location.href.includes('error') && !this.$store.getters.getStateGiftbag && !this.$store.getters.getStatePoster) {
+        setCookie('expiredTime', nowTime + 1200, 1);
         this.$store.commit('setStateGiftbag', true);
       }
     }, 3000);
@@ -137,9 +137,8 @@ export default {
       height: 1.18rem;
       > img {
         margin: 0 0 0 0.4rem;
-        width: 2.33rem;
-        height: 0.64rem;
-        background-color: #eeeeee;
+        width: 2.6rem;
+        height: 0.85rem;
       }
     }
     .header-menu {
