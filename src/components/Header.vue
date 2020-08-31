@@ -74,12 +74,16 @@ export default {
     }
     // 每12秒显示一次
     let timeStamp = (new Date()).getTime();
-    setCookie('expiredTime', timeStamp + 1200, 1);
-    setInterval(() => {
-      let nowTime = (new Date()).getTime();
-      if (nowTime >= getCookie('expiredTime') && location.href.includes('error') && !this.$store.getters.getStateGiftbag && !this.$store.getters.getStatePoster) {
-        setCookie('expiredTime', nowTime + 1200, 1);
-        this.$store.commit('setStateGiftbag', true);
+    setCookie('expiredTime', timeStamp + 18000, 1);
+    let giftTimer = setInterval(() => {
+      if (!this.$store.getters.getStateGiftSend) {
+        let nowTime = (new Date()).getTime();
+        if (nowTime >= getCookie('expiredTime') && !location.href.includes('error') && !this.$store.getters.getStateGiftbag && !this.$store.getters.getStatePoster) {
+          setCookie('expiredTime', nowTime + 18000, 1);
+          this.$store.commit('setStateGiftbag', true);
+        }
+      } else {
+        clearInterval(giftTimer);
       }
     }, 3000);
   },

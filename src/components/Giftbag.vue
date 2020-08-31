@@ -1,20 +1,22 @@
 <template>
   <div class="giftbag" v-show="gift" ref="gift">
     <div class="gift-panel" ref="panel">
-      <div class="gift-cancel" @click="onCancel"></div>
+      <div class="gift-cancel" @click="onCancel">
+        <img src="~@/assets/image/cancel2.png" alt="明动咨询" />
+      </div>
       <div class="gift-content">
         <div class="gift-form">
           <div class="gift-input gift-form-name">
             <div class="gift-label">
               <div>*<em>姓名: </em></div>
-              <input type="text" v-model="userName" placeholder="aaa" @blur="nameBlur" />
+              <input type="text" v-model="userName" placeholder="请输入姓名" @blur="nameBlur" />
             </div>
             <span v-show="warnName">{{ nameText }}</span>
           </div>
           <div class="gift-input gift-form-phone">
             <div class="gift-label">
               <div>*<em>电话: </em></div>
-              <input type="number" v-model="userPhone" placeholder="bbb" @blur="phoneBlur" />
+              <input type="number" v-model="userPhone" placeholder="请输入手机号" @blur="phoneBlur" />
             </div>
             <span v-show="warnPhone">{{ phoneText }}</span>
           </div>
@@ -22,7 +24,7 @@
             <div>*<em>留言: </em></div>
             <textarea v-model="userWord" rows="3" cols="20" placeholder="请输入留言"></textarea>
           </div>
-          <div class="gift-form-btn" :style="btnStatus ? '' : 'opacity: 0.48;'" @click="onSubmit">
+          <div v-show="!(warnName && warnPhone)" class="gift-form-btn" :style="btnStatus ? '' : 'opacity: 0.48;'" @click="onSubmit">
             <span>提交</span>
           </div>
         </div>
@@ -98,7 +100,7 @@ export default {
   },
   methods: {
     onCancel() {
-      this.$emit('btn-cancel')
+      this.$emit('btn-cancel');
     },
     nameBlur() {
       if (this.nameVerify) {
@@ -139,6 +141,8 @@ export default {
         .then((res) => {
           if (res.status) {
             toastBox(res.message);
+            that.$store.commit('setStateGiftbag', false);
+            that.$store.commit('setStateGiftSend', true);
           } else {
             toastBox(res.message);
           }
@@ -171,23 +175,29 @@ export default {
   z-index: 999;
   .gift-panel {
     position: relative;
-    width: 6.9rem;
-    height: 4.2rem;
+    width: 6.2rem;
+    height: 6.33rem;
     transform: scale(0);
-    background-color: #ffffff;
+    background: url('./../assets/image/gift.png') no-repeat;
+    background-size: 100% 100%;
+    background-position: top center;
     transition: transform 300ms ease-out 100ms;
     .gift-cancel {
       position: absolute;
       top: 0;
-      right: 0;
+      left: 0;
       width: 0.6rem;
       height: 0.6rem;
-      background-color: red;
+      > img {
+        width: 0.6rem;
+        height: 0.6rem;
+      }
     }
     .gift-content {
       display: flex;
       flex-direction: row;
       .gift-form {
+        margin: 0.8rem 0 0 0.6rem;
         .gift-input {
           padding: 0 0 0.12rem 0;
           border-bottom: 1px solid #eeeeee;
@@ -200,33 +210,34 @@ export default {
               display: flex;
               align-items: center;
               width: 1rem;
-              font-size: 0.3rem;
-              color: #de2128;
-              line-height: 0.3rem;
+              font-size: 0.28rem;
+              color: #ffffff;
+              line-height: 0.28rem;
               height: 0.42rem;
               > em {
                 margin: 0 0 0 0.04rem;
-                font-size: 0.3rem;
-                color: #212121;
+                font-size: 0.28rem;
+                color: #ffffff;
                 line-height: 0.3rem;
               }
             }
             > input {
               width: 3rem;
-              font-size: 0.32rem;
-              color: #212121;
-              line-height: 0.3rem;
+              font-size: 0.28rem;
+              color: #ffffff;
+              line-height: 0.28rem;
+              background-color: #ff5b00;
             }
             > input:-moz-placeholder {
-              font-size: 0.3rem;
-              color: #666666;
+              font-size: 0.28rem;
+              color: #ffffff;
             }
           }
           > span {
             margin: 0 0 0 1rem;
-            font-size: 0.24rem;
-            color: #de2128;
-            line-height: 0.24rem;
+            font-size: 0.22rem;
+            color: #ffffff;
+            line-height: 0.22rem;
           }
         }
         .gift-form-name {
@@ -244,47 +255,44 @@ export default {
             display: flex;
             align-items: center;
             width: 1rem;
-            font-size: 0.3rem;
-            color: #ffffff;
-            line-height: 0.3rem;
+            font-size: 0.28rem;
+            color: #ff5b00;
+            line-height: 0.28rem;
             > em {
               width: 1rem;
-              font-size: 0.3rem;
-              color: #212121;
-              line-height: 0.3rem;
+              font-size: 0.28rem;
+              color: #ffffff;
+              line-height: 0.36rem;
             }
           }
           > textarea {
             width: 3rem;
-            font-size: 0.32rem;
+            font-size: 0.28rem;
             color: #212121;
-            line-height: 0.3rem;
+            line-height: 0.38rem;
           }
           > textarea:-moz-placeholder {
-            font-size: 0.3rem;
-            color: #666666;
+            font-size: 0.28rem;
+            color: #ffffff;
           }
         }
         .gift-form-btn {
           display: flex;
           justify-content: center;
           align-items: center;
-          margin: 0.24rem 0 0 0;
+          margin: 0.32rem 0 0 1rem;
           width: 2.24rem;
           height: 0.68rem;
-          background-color: #07c160;
-          border: 1px solid #07c160;
+          background-color: #ffffff;
+          border: 1px solid #ffffff;
           border-radius: 0.04rem;
           > span {
             font-size: 0.32rem;
-            color: #ffffff;
+            color: #ff5b00;
             line-height: 0.32rem;
             font-weight: bolder;
           }
         }
-      }
-      .gift-phone {
-
       }
     }
   }

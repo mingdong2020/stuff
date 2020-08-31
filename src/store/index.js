@@ -9,6 +9,7 @@ export default createStore({
     stateToggle: false, // 控制右侧菜单栏目显示隐藏
     statePoster: false, // 是否显示海报广告
     stateGiftbag: false, // 是否显示电话弹窗
+    stateGiftSend: false, // 是否发送邮件
     stateIosBar: isWeChat() && isIos(), // 是否是微信ios
   },
   getters: {
@@ -29,6 +30,9 @@ export default createStore({
     },
     getStateGiftbag(state) {
       return state.stateGiftbag;
+    },
+    getStateGiftSend(state) {
+      return state.stateGiftSend;
     },
     getStateIosBar(state) {
       return state.stateIosBar;
@@ -52,6 +56,9 @@ export default createStore({
     },
     setStateGiftbag(state, stateGiftbag) {
       state.stateGiftbag = stateGiftbag;
+    },
+    setStateGiftSend(state, stateGiftSend) {
+      state.stateGiftSend = stateGiftSend;
     }
   },
   actions: {

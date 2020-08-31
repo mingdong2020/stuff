@@ -142,7 +142,7 @@ export default {
         background-size: 100%;
         background-position: top center;
         .slide-slogan {
-          margin: 3.74rem 0 0 0;
+          margin: 4.74rem 0 0 0.5rem;
           > h1 {
             font-size: 0.5rem;
             color: #FFFFFF;

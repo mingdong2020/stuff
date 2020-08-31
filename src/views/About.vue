@@ -3,12 +3,12 @@
     <div class="about-banner">
       <img src="~@/assets/image/connect.jpg" alt="明动咨询" />
     </div>
-    <div class="about-connect">
+    <a class="about-connect" href="tel:4008887899">
       <h1>联系我们</h1>
       <span>400-888-7899</span>
       <span>上海市浦东新区马吉路28号东华金融大厦1206</span>
-    </div>
-    <div class="about-connect">
+    </a>
+    <div class="about-connect" @click="onEmail">
       <h1>官方邮箱</h1>
       <span>mingdongtouzi@mingdong.net.cn</span>
     </div>
@@ -46,6 +46,11 @@ export default {
     this.$nextTick(() => {
       document.body.style.display = "block";
     })
+  },
+  methods: {
+    onEmail() {
+      this.$store.commit('setStateGiftbag', true);
+    }
   }
 }
 </script>
