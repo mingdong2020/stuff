@@ -9,7 +9,7 @@ module.exports = {
     plugins: [
       new PrerenderSPAPlugin({
         staticDir: path.join(__dirname, 'dist'),
-        routes: [ '/', '/account', '/garden', '/mitax', '/steamer', '/about', '/error' ],
+        routes: [ '/', '/account', '/garden', '/mitax', '/steamer', '/about', '/error', '/email' ],
         postProcessHtml: (context) => {
           const inform = {
             '/': seoConfig['home'],
@@ -19,6 +19,7 @@ module.exports = {
             '/steamer': seoConfig['steamer'],
             '/about': seoConfig['about'],
             '/error': seoConfig['error'],
+            '/email': seoConfig['email'],
           }
           return context.html.replace(
             /<title>[^<]*<\/title>/i,

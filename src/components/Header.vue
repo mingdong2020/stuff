@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <div class="header" v-if="$store.getters.getStateHead" ref="header" :style="$store.getters.getStateType ? 'background-color: transparent' : 'background-color: #ffffff;border-bottom: 1px solid #EEEEEE;'">
-      <div class="header-logo">
+      <div class="header-logo" @click="onIndex">
         <img v-show="$store.getters.getStateType" src="~@/assets/image/logo-white.png" alt="明动咨询" />
         <img v-show="!$store.getters.getStateType" src="~@/assets/image/logo-white.png" alt="明动咨询" />
       </div>
@@ -64,7 +64,7 @@ export default {
     if (advert == process.env.VUE_APP_VERSION) {
       this.onSlide();
     } else {
-      if (!(location.href.includes('error') || location.href.includes('mitax'))) {
+      if (!(location.href.includes('error') || location.href.includes('mitax') || location.href.includes('email'))) {
         setTimeout(() => {
           this.$store.commit('setStatePoster', true);
           setCookie('advert', process.env.VUE_APP_VERSION, 1);
@@ -78,7 +78,7 @@ export default {
     let giftTimer = setInterval(() => {
       if (!this.$store.getters.getStateGiftSend) {
         let nowTime = (new Date()).getTime();
-        if (nowTime >= getCookie('expiredTime') && !location.href.includes('error') && !this.$store.getters.getStateGiftbag && !this.$store.getters.getStatePoster) {
+        if (nowTime >= getCookie('expiredTime') && !location.href.includes('error') && !location.href.includes('email') && !this.$store.getters.getStateGiftbag && !this.$store.getters.getStatePoster) {
           setCookie('expiredTime', nowTime + 18000, 1);
           this.$store.commit('setStateGiftbag', true);
         }
@@ -88,6 +88,11 @@ export default {
     }, 3000);
   },
   methods: {
+    onIndex() {
+      this.$router.replace({
+        name: 'Home'
+      })
+    },
     onToggle() {
       let toggle = !this.$store.getters.getStateToggle;
       this.$store.commit('setStateToggle', toggle);

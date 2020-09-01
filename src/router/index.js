@@ -49,6 +49,14 @@ const routes = [
       key: 5
     },
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+  },
+  {
+    path: '/email',
+    name: 'Email',
+    meta: {
+      key: 6
+    },
+    component: () => import(/* webpackChunkName: "email" */ '../views/Email.vue')
   }
 ]
 
