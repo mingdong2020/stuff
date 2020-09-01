@@ -39,10 +39,10 @@
 </template>
 
 <script>
-import 'swiper/swiper.less';
-import Swiper from 'swiper/swiper-bundle.js';
+import "swiper/swiper.less";
+import Swiper from "swiper/swiper-bundle.js";
 export default {
-  name: 'Home',
+  name: "Home",
   props: {
     slider: Boolean
   },
@@ -55,11 +55,11 @@ export default {
       bannerRatio: false, // 首屏图片自适应
       hasHandler: false, // 用户是否手动滑动过
       listData: [
-        {name: '财务代理', path: '/account', image: require("./../assets/image/home2.png")},
-        {name: '园区直招', path: '/garden', image: require("./../assets/image/home3.png")},
-        {name: '爱税筹', path: '/mitax', image: require("./../assets/image/home4.png")},
-        {name: '舟山自贸区', path: '/steamer', image: require("./../assets/image/home5.png")},
-        {name: '关于我们', path: '/about', image: require("./../assets/image/home6.png")},
+        {name: "财务代理", path: "/account", image: require("./../assets/image/home2.png")},
+        {name: "园区直招", path: "/garden", image: require("./../assets/image/home3.png")},
+        {name: "爱税筹", path: "/mitax", image: require("./../assets/image/home4.png")},
+        {name: "舟山自贸区", path: "/steamer", image: require("./../assets/image/home5.png")},
+        {name: "关于我们", path: "/about", image: require("./../assets/image/home6.png")},
       ]
     }
   },
@@ -68,7 +68,7 @@ export default {
       handler: function() {
         if (!this.hasHandler && this.bannerSwiper.activeIndex == 0) {
           this.bannerSwiper.slideTo(1, 1000, false);
-          this.$store.commit('setStateType', false);
+          this.$store.commit("setStateType", false);
         }
       }
     }
@@ -85,23 +85,23 @@ export default {
       that.bannerRatio = true;
     }
     // 小屏幕大屏幕适配
-    if ((that.clientWidth / that.clientHeight).toFixed(2) >= '0.62') {
+    if ((that.clientWidth / that.clientHeight).toFixed(2) >= "0.62") {
       that.clientRatio = 1;
-    } else if ((that.clientWidth / that.clientHeight).toFixed(2) <= '0.52') {
+    } else if ((that.clientWidth / that.clientHeight).toFixed(2) <= "0.52") {
       that.clientRatio = 2;
     }
     // 初始化模块
     that.$nextTick(() => {
-      that.bannerSwiper = new Swiper('.home .swiper-container', {
+      that.bannerSwiper = new Swiper(".home .swiper-container", {
         mousewheel: true,
-        direction: 'vertical',
+        direction: "vertical",
         height: that.clientHeight,
         observer: true,
         observeParents: true,
         on: {
           slideChangeTransitionStart: function() {
             that.hasHandler = true;
-            that.$store.commit('setStateType', this.activeIndex == 0 ? true : false);
+            that.$store.commit("setStateType", this.activeIndex == 0 ? true : false);
           }
         }
       });
@@ -115,7 +115,7 @@ export default {
     onSilder() {
       if (this.bannerSwiper.activeIndex == 0) {
         this.bannerSwiper.slideTo(1, 1000, false);
-        this.$store.commit('setStateType', false);
+        this.$store.commit("setStateType", false);
       }
     },
     onRouter(path) {
@@ -138,7 +138,7 @@ export default {
         background-color: #FFFFFF;
       }
       .slide-banner {
-        background: url('~@/assets/image/banner.jpg') no-repeat;
+        background: url("~@/assets/image/banner.jpg") no-repeat;
         background-size: 100%;
         background-position: top center;
         .slide-slogan {
@@ -276,7 +276,7 @@ export default {
         }
       }
       .banner-aito {
-        background: url('~@/assets/image/banner.jpg') no-repeat;
+        background: url("~@/assets/image/banner.jpg") no-repeat;
         background-position: top center;
         background-size: auto 100%;
       }

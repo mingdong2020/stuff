@@ -10,7 +10,7 @@
 
 <script>
 export default {
-  name: 'Poster',
+  name: "Poster",
   props: {
     toggle: Boolean
   },
@@ -25,12 +25,12 @@ export default {
         if (this.toggle) {
           this.cover = true;
           setTimeout(() => {
-            this.$refs.poster.style.opacity = '1';
-            this.$refs.panel.style.top = '50%';
+            this.$refs.poster.style.opacity = "1";
+            this.$refs.panel.style.top = "50%";
           }, 30);
         } else {
-          this.$refs.poster.style.opacity = '0';
-          this.$refs.panel.style.top = '42%';
+          this.$refs.poster.style.opacity = "0";
+          this.$refs.panel.style.top = "42%";
           setTimeout(() => {
             this.cover = false;
           }, 330);
@@ -72,7 +72,7 @@ export default {
     transform: translate(-50%, -50%);
     border-radius: 0.12rem;
     transition: top 300ms ease-out 100ms;
-    background: url('./../assets/image/mitax.jpg') no-repeat;
+    background: url("./../assets/image/mitax.jpg") no-repeat;
     background-size: 100% 100%;
     background-position: top center;
     background-color: #ffffff;

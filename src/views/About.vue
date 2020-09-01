@@ -39,17 +39,17 @@
 
 <script>
 export default {
-  name: 'About',
+  name: "About",
   mounted() {
     // 内滚动还原
-    document.getElementById('scroll').scrollTo(0, 0);
+    document.getElementById("scroll").scrollTo(0, 0);
     this.$nextTick(() => {
       document.body.style.display = "block";
     })
   },
   methods: {
     onEmail() {
-      this.$store.commit('setStateGiftbag', true);
+      this.$store.commit("setStateGiftbag", true);
     }
   }
 }

@@ -1,75 +1,75 @@
-import { createRouter, createWebHistory } from 'vue-router'
-import Home from '../views/Home.vue'
+import { createRouter, createWebHistory } from "vue-router"
+import Home from "../views/Home.vue"
 
 const routes = [
   {
-    path: '/',
-    name: 'Home',
+    path: "/",
+    name: "Home",
     meta: {
       key: 0
     },
     component: Home
   },
   {
-    path: '/account',
-    name: 'Account',
+    path: "/account",
+    name: "Account",
     meta: {
       key: 1
     },
-    component: () => import(/* webpackChunkName: "account" */ '../views/Account.vue')
+    component: () => import(/* webpackChunkName: "account" */ "../views/Account.vue")
   },
   {
-    path: '/garden',
-    name: 'Garden',
+    path: "/garden",
+    name: "Garden",
     meta: {
       key: 2
     },
-    component: () => import(/* webpackChunkName: "garden" */ '../views/Garden.vue')
+    component: () => import(/* webpackChunkName: "garden" */ "../views/Garden.vue")
   },
   {
-    path: '/mitax',
-    name: 'Mitax',
+    path: "/mitax",
+    name: "Mitax",
     meta: {
       key: 3
     },
-    component: () => import(/* webpackChunkName: "mitax" */ '../views/Mitax.vue')
+    component: () => import(/* webpackChunkName: "mitax" */ "../views/Mitax.vue")
   },
   {
-    path: '/steamer',
-    name: 'Steamer',
+    path: "/steamer",
+    name: "Steamer",
     meta: {
       key: 4
     },
-    component: () => import(/* webpackChunkName: "steamer" */ '../views/Steamer.vue')
+    component: () => import(/* webpackChunkName: "steamer" */ "../views/Steamer.vue")
   },
   {
-    path: '/about',
-    name: 'About',
+    path: "/about",
+    name: "About",
     meta: {
       key: 5
     },
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
+    component: () => import(/* webpackChunkName: "about" */ "../views/About.vue")
   },
   {
-    path: '/email',
-    name: 'Email',
+    path: "/email",
+    name: "Email",
     meta: {
       key: 6
     },
-    component: () => import(/* webpackChunkName: "email" */ '../views/Email.vue')
+    component: () => import(/* webpackChunkName: "email" */ "../views/Email.vue")
   }
 ]
 
 routes.push(
   {
-    path: '/*',
-    name: '404',
-    component: () => import(/* webpackChunkName: "error" */ '../views/Error.vue')
+    path: "/*",
+    name: "404",
+    component: () => import(/* webpackChunkName: "error" */ "../views/Error.vue")
   },
   {
-    path: '/error/:code',
-    name: 'Error',
-    component: () => import(/* webpackChunkName: "error" */ '../views/Error.vue')
+    path: "/error/:code",
+    name: "Error",
+    component: () => import(/* webpackChunkName: "error" */ "../views/Error.vue")
   }
 )
 

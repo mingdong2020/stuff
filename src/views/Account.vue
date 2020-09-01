@@ -55,7 +55,7 @@
 
 <script>
 export default {
-  name: 'Account',
+  name: "Account",
   data() {
     return {
       reasonData: [
@@ -122,7 +122,7 @@ export default {
   },
   mounted() {
     // 内滚动还原
-    document.getElementById('scroll').scrollTo(0, 0);
+    document.getElementById("scroll").scrollTo(0, 0);
     this.$nextTick(() => {
       document.body.style.display = "block";
     })
@@ -270,7 +270,6 @@ export default {
         font-size: 0.3rem;
         color: #ffffff;
         line-height: 0.34rem;
-        // background-color: #cf5955;
         background: rgba(255, 0, 0, 0.6);
         border-radius: 50px;
         transform: translate(-50%);

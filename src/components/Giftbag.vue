@@ -35,9 +35,9 @@
 
 <script>
 import { toastBox } from "@/assets/js/appUtils.js"
-import { axiosFetch } from '@/assets/js/appUtils';
+import { axiosFetch } from "@/assets/js/appUtils"
 export default {
-  name: 'Giftbag',
+  name: "Giftbag",
   props: {
     toggle: Boolean
   },
@@ -47,11 +47,11 @@ export default {
       userName: null,
       nameVerify: false,
       warnName: false,
-      nameText: '请输入姓名',
+      nameText: "请输入姓名",
       userPhone: null,
       phoneVerify: false,
       warnPhone: false,
-      phoneText: '请输入手机号',
+      phoneText: "请输入手机号",
       userWord: null,
       btnStatus: false
     }
@@ -62,12 +62,12 @@ export default {
         if (this.toggle) {
           this.gift = true;
           setTimeout(() => {
-            this.$refs.gift.style.opacity = '1';
-            this.$refs.panel.style.transform = 'scale(1)';
+            this.$refs.gift.style.opacity = "1";
+            this.$refs.panel.style.transform = "scale(1)";
           }, 30);
         } else {
-          this.$refs.gift.style.opacity = '0';
-            this.$refs.panel.style.transform = 'scale(0)';
+          this.$refs.gift.style.opacity = "0";
+          this.$refs.panel.style.transform = "scale(0)";
           setTimeout(() => {
             this.gift = false;
           }, 330);
@@ -81,7 +81,7 @@ export default {
           this.onBtnStatus();
         } else {
           this.nameVerify = false;
-          this.userName ? this.nameText = '请输入正确姓名' : this.nameText = '请输入姓名'
+          this.userName ? this.nameText = "请输入正确姓名" : this.nameText = "请输入姓名"
         }
       }
     },
@@ -93,14 +93,14 @@ export default {
           this.onBtnStatus();
         } else {
           this.phoneVerify = false;
-          this.userPhone ? this.phoneText = '请输入正确手机号' : this.phoneText = '请输入手机号'
+          this.userPhone ? this.phoneText = "请输入正确手机号" : this.phoneText = "请输入手机号"
         }
       }
     }
   },
   methods: {
     onCancel() {
-      this.$emit('btn-cancel');
+      this.$emit("btn-cancel");
     },
     nameBlur() {
       if (this.nameVerify) {
@@ -128,9 +128,9 @@ export default {
       if (that.nameVerify && that.phoneVerify && that.btnStatus) {
         that.btnStatus = false;
         axiosFetch({
-          method: 'POST',
-          url: '/api/send',
-          load: '邮件发送中..',
+          method: "POST",
+          url: "/api/send",
+          load: "预约中..",
           params: {
             source: location.href,
             name: that.userName,
@@ -141,8 +141,8 @@ export default {
         .then((res) => {
           if (res.status) {
             toastBox(res.message);
-            that.$store.commit('setStateGiftbag', false);
-            that.$store.commit('setStateGiftSend', true);
+            that.$store.commit("setStateGiftbag", false);
+            that.$store.commit("setStateGiftSend", true);
           } else {
             toastBox(res.message);
           }
@@ -178,7 +178,7 @@ export default {
     width: 6.2rem;
     height: 6.33rem;
     transform: scale(0);
-    background: url('./../assets/image/gift.png') no-repeat;
+    background: url("./../assets/image/gift.png") no-repeat;
     background-size: 100% 100%;
     background-position: top center;
     transition: transform 300ms ease-out 100ms;

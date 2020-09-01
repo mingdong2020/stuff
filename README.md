@@ -20,7 +20,7 @@
      |         |- Steamer.vue 舟山自贸区
      |         |- Home.vue    首页
      |         |- Error.vue   错误页面
-     |
+     |         |- Email.vue   预约页面
      |- main.js 入口文件
 
 ### 项目

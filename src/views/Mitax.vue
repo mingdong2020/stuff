@@ -149,10 +149,10 @@
 </template>
 
 <script>
-import 'swiper/swiper.less';
-import Swiper from 'swiper/swiper-bundle.js';
+import "swiper/swiper.less";
+import Swiper from "swiper/swiper-bundle.js";
 export default {
-  name: 'Mitax',
+  name: "Mitax",
   data() {
     return {
       serveData: [
@@ -188,14 +188,14 @@ export default {
     }
   },
   mounted() {
-    new Swiper('.mitax-product .swiper-container', {
-      effect: 'coverflow',
-      slidesPerView: 'auto',
+    new Swiper(".mitax-product .swiper-container", {
+      effect: "coverflow",
+      slidesPerView: "auto",
       centeredSlides: true,
       loop: true,
     });
     // 内滚动还原
-    document.getElementById('scroll').scrollTo(0, 0);
+    document.getElementById("scroll").scrollTo(0, 0);
     this.$nextTick(() => {
       document.body.style.display = "block";
     })

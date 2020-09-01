@@ -1,5 +1,5 @@
-import { createStore } from 'vuex'
-import { isWeChat, isIos } from '@/assets/js/usualUtils.js'
+import { createStore } from "vuex"
+import { isWeChat, isIos } from "@/assets/js/usualUtils.js"
 
 export default createStore({
   state: {

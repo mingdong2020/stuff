@@ -99,12 +99,12 @@
 </template>
 
 <script>
-import Dialog from '@/components/Dialog.vue'
-import 'swiper/swiper.less';
-import Swiper from 'swiper/swiper-bundle.js';
+import Dialog from "@/components/Dialog.vue"
+import "swiper/swiper.less";
+import Swiper from "swiper/swiper-bundle.js";
 import { loadedBox, toastBox } from "@/assets/js/appUtils.js"
 export default {
-  name: 'Steamer',
+  name: "Steamer",
   components: {
     Dialog
   },
@@ -160,7 +160,7 @@ export default {
   mounted() {
     let that = this;
     // 初始化模块
-    that.bannerSwiper = new Swiper('.case-swiper .swiper-container', {
+    that.bannerSwiper = new Swiper(".case-swiper .swiper-container", {
       mousewheel: true,
       loop : true,
       autoplay: true,
@@ -171,7 +171,7 @@ export default {
       }
     });
     // 内滚动还原
-    document.getElementById('scroll').scrollTo(0, 0);
+    document.getElementById("scroll").scrollTo(0, 0);
     this.$nextTick(() => {
       document.body.style.display = "block";
     })

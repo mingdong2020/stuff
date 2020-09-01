@@ -1,8 +1,8 @@
 /*
   常用逻辑方法集合
 */
-import axios from 'axios'
-import qs from 'qs'
+import axios from "axios"
+import qs from "qs"
 
 /**
  * axios请求接口

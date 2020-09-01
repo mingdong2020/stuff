@@ -7,7 +7,7 @@
 </template>
 
 <script>
-import Header from '@/components/Header.vue'
+import Header from "@/components/Header.vue"
 export default {
   name: "App",
   data() {
@@ -61,14 +61,14 @@ img{
   display: block;
 }
 a, u{
-  text-decoration:none;
+  text-decoration: none;
 }
 b, em, i{
-  font-weight:normal;
-  font-style:normal;
+  font-weight: normal;
+  font-style: normal;
 }
 ul li{
-  list-style-type:none;
+  list-style-type: none;
 }
 div, span, img {
   cursor: pointer;

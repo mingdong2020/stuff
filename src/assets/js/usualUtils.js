@@ -68,7 +68,7 @@ export function GetQueryString(name) {
  */
 export function isWeChat() {
   var ua = window.navigator.userAgent.toLowerCase();
-  if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+  if (ua.match(/MicroMessenger/i) == "micromessenger") {
     return true;
   } else {
     return false;
@@ -81,8 +81,8 @@ export function isWeChat() {
 export function isIos() {
   var u = navigator.userAgent;
   var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
-  var os = GetQueryString('os');
-  return isiOS || (os == 'ios');
+  var os = GetQueryString("os");
+  return isiOS || (os == "ios");
 }
 
 /**

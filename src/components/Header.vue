@@ -21,12 +21,12 @@
 </template>
 
 <script>
-import { getCookie, setCookie } from '@/assets/js/usualUtils.js'
-import Poster from '@/components/Poster.vue'
-import Options from '@/components/Options.vue'
-import Giftbag from '@/components/Giftbag.vue'
+import { getCookie, setCookie } from "@/assets/js/usualUtils.js"
+import Poster from "@/components/Poster.vue"
+import Options from "@/components/Options.vue"
+import Giftbag from "@/components/Giftbag.vue"
 export default {
-  name: 'Header',
+  name: "Header",
   components: {
     Poster,
     Options,
@@ -60,27 +60,27 @@ export default {
     this.clientHeight = window.innerHeight;
     this.panelHeight = this.clientHeight - this.$refs.header.offsetHeight;
     // 每隔1小时显示海报
-    let advert = getCookie('advert');
+    let advert = getCookie("advert");
     if (advert == process.env.VUE_APP_VERSION) {
       this.onSlide();
     } else {
-      if (!(location.href.includes('error') || location.href.includes('mitax') || location.href.includes('email'))) {
+      if (!(location.href.includes("error") || location.href.includes("mitax") || location.href.includes("email"))) {
         setTimeout(() => {
-          this.$store.commit('setStatePoster', true);
-          setCookie('advert', process.env.VUE_APP_VERSION, 1);
+          this.$store.commit("setStatePoster", true);
+          setCookie("advert", process.env.VUE_APP_VERSION, 1);
           this.watchPoster = true;
         }, 2400);
       }
     }
     // 每12秒显示一次
     let timeStamp = (new Date()).getTime();
-    setCookie('expiredTime', timeStamp + 18000, 1);
+    setCookie("expiredTime", timeStamp + 18000, 1);
     let giftTimer = setInterval(() => {
       if (!this.$store.getters.getStateGiftSend) {
         let nowTime = (new Date()).getTime();
-        if (nowTime >= getCookie('expiredTime') && !location.href.includes('error') && !location.href.includes('email') && !this.$store.getters.getStateGiftbag && !this.$store.getters.getStatePoster) {
-          setCookie('expiredTime', nowTime + 18000, 1);
-          this.$store.commit('setStateGiftbag', true);
+        if (nowTime >= getCookie("expiredTime") && !location.href.includes("error") && !location.href.includes("email") && !this.$store.getters.getStateGiftbag && !this.$store.getters.getStatePoster) {
+          setCookie("expiredTime", nowTime + 18000, 1);
+          this.$store.commit("setStateGiftbag", true);
         }
       } else {
         clearInterval(giftTimer);
@@ -90,32 +90,32 @@ export default {
   methods: {
     onIndex() {
       this.$router.replace({
-        name: 'Home'
+        name: "Home"
       })
     },
     onToggle() {
       let toggle = !this.$store.getters.getStateToggle;
-      this.$store.commit('setStateToggle', toggle);
+      this.$store.commit("setStateToggle", toggle);
     },
     onCancel() {
       this.watchCancel = true;
-      this.$store.commit('setStatePoster', false);
+      this.$store.commit("setStatePoster", false);
     },
     onPoster() {
-      this.$store.commit('setStatePoster', false);
+      this.$store.commit("setStatePoster", false);
       this.$router.replace({
-        name: 'Mitax'
+        name: "Mitax"
       })
     },
     onSlide() {
       setTimeout(() => {
         if (this.$store.getters.getStateIndex == 0) {
-          this.$emit('btn-slider');
+          this.$emit("btn-slider");
         }
       }, 3600);
     },
     onClose() {
-      this.$store.commit('setStateGiftbag', false);
+      this.$store.commit("setStateGiftbag", false);
     }
   }
 }

@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  name: 'Options',
+  name: "Options",
   props: {
     toggle: Boolean
   },
@@ -27,12 +27,12 @@ export default {
     return {
       cover: false,
       list: [
-        {name: '首页', path: '/'},
-        {name: '财务代理', path: '/account'},
-        {name: '园区直招', path: '/garden'},
-        {name: '爱税筹', path: '/mitax'},
-        {name: '舟山自贸区', path: '/steamer'},
-        {name: '关于我们', path: '/about'},
+        {name: "首页", path: "/"},
+        {name: "财务代理", path: "/account"},
+        {name: "园区直招", path: "/garden"},
+        {name: "爱税筹", path: "/mitax"},
+        {name: "舟山自贸区", path: "/steamer"},
+        {name: "关于我们", path: "/about"},
       ]
     }
   },
@@ -45,7 +45,7 @@ export default {
             this.$refs.panel.style.right = 0;
           }, 30);
         } else {
-          this.$refs.panel.style.right = '-5.2rem';
+          this.$refs.panel.style.right = "-5.2rem";
           setTimeout(() => {
             this.cover = false;
           }, 330);
@@ -55,7 +55,7 @@ export default {
   },
   methods: {
     onCancel() {
-      this.$emit('btn-cancel');
+      this.$emit("btn-cancel");
     },
     onRouter(path) {
       this.$router.replace({
