@@ -9,7 +9,7 @@ import { injectScript } from "@/assets/js/usualUtils.js"
 process.env.NODE_ENV === "production" ? "" : injectScript("/statics/js/vconsole.min.js")
 
 router.beforeEach((to, from, next) => {
-  if (to.name == "Error" || to.name == "Email") {
+  if (to.name == "Error") {
     store.commit("setStateHead", false);
   }
   if (to.name == "Home") {

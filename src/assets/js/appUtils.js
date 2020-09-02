@@ -63,7 +63,7 @@ export function toastBox(text = "网络错误～") {
     toast.style.transform = "translate(-50%, -50%)";
     toast.style.background = "rgba(0, 0, 0, 0.68)";
     toast.style.zIndex = "999";
-    toast.innerHTML = `<span style="min-width: 1.4rem; max-width: 4.4rem; font-size: 0.28rem; color: #ffffff;">${text}</span>`;
+    toast.innerHTML = `<span style="min-width: 1.4rem; max-width: 4.4rem; font-size: 0.28rem; color: #ffffff; white-space: nowrap;">${text}</span>`;
     document.body.appendChild(toast);
     let count = 0;
     let show = setInterval(() => {
