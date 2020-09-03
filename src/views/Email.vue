@@ -1,8 +1,5 @@
 <template>
-  <div class="email">
-    <div class="email-order">
-      <h3>在线预约</h3>
-    </div>
+  <div class="email" v-cloak>
     <div class="email-content">
       <div class="email-form">
         <div class="email-input email-form-name">
@@ -176,14 +173,6 @@ export default {
   height: 100%;
   overflow: hidden;
   background-color: #eeeeee;
-  .email-order {
-    > h3 {
-      margin: 0.54rem 0 0 0;
-      font-size: 0.38rem;
-      color: #212121;
-      text-align: center;
-    }
-  }
   .email-content {
     display: flex;
     flex-direction: row;

@@ -111,4 +111,7 @@ div, span, img {
 		stroke-dashoffset: -120
 	}
 }
+[v-cloak] {
+  display: none;
+}
 </style>
