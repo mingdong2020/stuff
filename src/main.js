@@ -12,12 +12,8 @@ router.beforeEach((to, from, next) => {
   if (to.name == "Error") {
     store.commit("setStateHead", false);
   }
-  if (to.name == "Email") {
-    if (to.params.client == "applet") {
-      store.commit("setStateHead", false);
-    } else {
-      store.commit("setStateHead", true);
-    }
+  if (location.href.includes("https://mdqygl.cn")) {
+    store.commit("setStateHead", false);
   }
   if (to.name == "Home") {
     store.commit("setStateType", true);

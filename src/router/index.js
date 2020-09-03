@@ -43,7 +43,7 @@ const routes = [
     component: () => import(/* webpackChunkName: "steamer" */ "../views/Steamer.vue")
   },
   {
-    path: "/email/:client",
+    path: "/email",
     name: "Email",
     meta: {
       key: 5

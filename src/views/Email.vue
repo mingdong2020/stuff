@@ -1,6 +1,6 @@
 <template>
   <div class="email">
-    <div class="email-order" v-if="$route.params.client == 'applet'">
+    <div class="email-order">
       <h3>在线预约</h3>
     </div>
     <div class="email-content">
@@ -150,8 +150,10 @@ export default {
         .then((res) => {
           if (res.status) {
             toastBox(res.message);
-            that.$store.commit("setStateGiftbag", false);
-            that.$store.commit("setStateGiftSend", true);
+            if (!(location.href.includes("https://mdqygl.cn"))) {
+              that.$store.commit("setStateGiftbag", false);
+              that.$store.commit("setStateGiftSend", true);
+            }
           } else {
             toastBox(res.message);
           }
