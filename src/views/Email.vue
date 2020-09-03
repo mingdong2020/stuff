@@ -1,8 +1,8 @@
 <template>
   <div class="email">
-    <!-- <div class="email-order">
+    <div class="email-order" v-if="$route.params.client == 'applet'">
       <h3>在线预约</h3>
-    </div> -->
+    </div>
     <div class="email-content">
       <div class="email-form">
         <div class="email-input email-form-name">
@@ -98,6 +98,7 @@ export default {
     }
   },
   mounted() {
+    console.log(this.$route.params.client == "applet", "client");
     this.$nextTick(() => {
       document.body.style.display = "block";
     })
