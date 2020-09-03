@@ -2,7 +2,7 @@ const path = require("path")
 const seoConfig = require("./config.json")
 const PrerenderSPAPlugin = require("prerender-spa-plugin")
 module.exports = {
-  publicPath: "/",
+  publicPath: "./",
   // publicPath: process.env.NODE_ENV === "production" ? 'http://mdtzzx.com' : '/',
   productionSourceMap: process.env.NODE_ENV === "production" ? false : true,
   configureWebpack: {
