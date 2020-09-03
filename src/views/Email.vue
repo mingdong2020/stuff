@@ -98,6 +98,7 @@ export default {
     }
   },
   mounted() {
+    console.log('aaa');
     this.$nextTick(() => {
       document.body.style.display = "block";
     })
