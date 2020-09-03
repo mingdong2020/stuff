@@ -98,7 +98,6 @@ export default {
     }
   },
   mounted() {
-    console.log(this.$route.params.client == "applet", "client");
     this.$nextTick(() => {
       document.body.style.display = "block";
     })
