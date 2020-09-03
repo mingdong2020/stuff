@@ -1,8 +1,5 @@
 <template>
   <div class="email">
-    <div class="email-order">
-      <h3>在线预约</h3>
-    </div>
     <div class="email-content">
       <div class="email-form">
         <div class="email-input email-form-name">

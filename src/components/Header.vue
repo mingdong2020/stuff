@@ -72,7 +72,7 @@ export default {
         }, 2400);
       }
     }
-    // 每12秒显示一次
+    // 每18秒显示一次
     let timeStamp = (new Date()).getTime();
     setCookie("expiredTime", timeStamp + 18000, 1);
     let giftTimer = setInterval(() => {

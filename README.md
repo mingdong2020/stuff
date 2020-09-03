@@ -1,5 +1,9 @@
 ### 明动咨询移动端SEO站
 
+### 
+master => mdtzzx.com
+applet => 小程序预约页面专用
+
 ### 项目结构
                 |- image 静态图片资源
                 |      |- baseUtils.js   全局rem

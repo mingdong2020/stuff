@@ -1,9 +1,9 @@
 http://mingdongzixun.com
 http://mingdongzixun.com/
-http://mingdongzixun.com/index.html
-http://mingdongzixun.com/account/index.html
-http://mingdongzixun.com/garden/index.html
-http://mingdongzixun.com/mitax/index.html
-http://mingdongzixun.com/steamer/index.html
-http://mingdongzixun.com/about/index.html
-http://mingdongzixun.com/email/index.html
+http://mingdongzixun.com/
+http://mingdongzixun.com/account/
+http://mingdongzixun.com/garden/
+http://mingdongzixun.com/mitax/
+http://mingdongzixun.com/steamer/
+http://mingdongzixun.com/about/
+http://mingdongzixun.com/email/
