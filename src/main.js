@@ -11,7 +11,7 @@ router.beforeEach((to, from, next) => {
   if (to.name == "Error") {
     store.commit("setStateHead", false);
   }
-  if (location.href.includes("https://mdqygl.cn")) {
+  if (to.name == "Email") {
     store.commit("setStateHead", false);
   }
   if (to.name == "Home") {

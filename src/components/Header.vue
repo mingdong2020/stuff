@@ -58,8 +58,14 @@ export default {
   },
   mounted() {
     this.clientHeight = window.innerHeight;
-    this.panelHeight = this.clientHeight - this.$refs.header.offsetHeight;
+    window.onload = () => {
+      if (!this.$store.getters.getStateHead) {
+        this.panelHeight = this.clientHeight;
+      }
+    }
+    
     // 每隔1小时显示海报
+    console.log(this.clientHeight, this.panelHeight, this.$refs.header.offsetHeight)
     let advert = getCookie("advert");
     if (advert == process.env.VUE_APP_VERSION) {
       this.onSlide();

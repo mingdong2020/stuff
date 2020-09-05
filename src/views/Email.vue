@@ -177,7 +177,7 @@ export default {
     display: flex;
     flex-direction: row;
     padding: 0 0 0.48rem 0;
-    margin: 0.38rem auto 0 auto;
+    margin: 0.68rem auto 0 auto;
     width: 6.8rem;
     border-radius: 0.05rem;
     background-color: #ffffff;

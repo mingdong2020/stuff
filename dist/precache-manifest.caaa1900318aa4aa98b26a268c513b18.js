@@ -8,16 +8,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/account.9a8f73e0.css"
   },
   {
-    "revision": "330c0ee175a6784f9cc1",
-    "url": "/css/app.eb0c5ce1.css"
+    "revision": "6043e99189d23570c7cf",
+    "url": "/css/app.5c25a3df.css"
   },
   {
     "revision": "98ce0ae14b6c01ab0645",
     "url": "/css/chunk-vendors.d8216893.css"
   },
   {
-    "revision": "1e7b8a8f36469fafc2cd",
-    "url": "/css/email.854dec4d.css"
+    "revision": "74b39ba4e7c29e0e2fd7",
+    "url": "/css/email.20f33130.css"
   },
   {
     "revision": "fdefe729bce867928d48",
@@ -228,7 +228,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/wechat.aa80fc0c.png"
   },
   {
-    "revision": "781d580e7cdf1f411f10fd92b4ae98ed",
+    "revision": "c647f29e222c673f9e265fa8c5b4b853",
     "url": "/index.html"
   },
   {
@@ -240,16 +240,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/account.fd555317.js"
   },
   {
-    "revision": "330c0ee175a6784f9cc1",
-    "url": "/js/app.12e52717.js"
+    "revision": "6043e99189d23570c7cf",
+    "url": "/js/app.7429dffd.js"
   },
   {
     "revision": "98ce0ae14b6c01ab0645",
     "url": "/js/chunk-vendors.0236422f.js"
   },
   {
-    "revision": "1e7b8a8f36469fafc2cd",
-    "url": "/js/email.2bb4ecdf.js"
+    "revision": "74b39ba4e7c29e0e2fd7",
+    "url": "/js/email.7aedf4de.js"
   },
   {
     "revision": "fdefe729bce867928d48",
