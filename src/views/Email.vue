@@ -95,7 +95,7 @@ export default {
     }
   },
   mounted() {
-    console.log('aaa');
+    console.log('aaa', this.$store.getters.getStateType);
     this.$nextTick(() => {
       document.body.style.display = "block";
     })

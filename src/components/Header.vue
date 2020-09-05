@@ -17,6 +17,7 @@
     <Options :toggle="$store.getters.getStateToggle" @btn-cancel="onToggle" />
     <Poster :toggle="$store.getters.getStatePoster" @btn-cancel="onCancel" @btn-poster="onPoster" />
     <Giftbag :toggle="$store.getters.getStateGiftbag" @btn-cancel="onClose" />
+    <Holdout />
   </div>
 </template>
 
@@ -25,12 +26,14 @@ import { getCookie, setCookie } from "@/assets/js/usualUtils.js"
 import Poster from "@/components/Poster.vue"
 import Options from "@/components/Options.vue"
 import Giftbag from "@/components/Giftbag.vue"
+import Holdout from "@/components/Holdout.vue"
 export default {
   name: "Header",
   components: {
     Poster,
     Options,
-    Giftbag
+    Giftbag,
+    Holdout
   },
   data() {
     return {
@@ -58,7 +61,10 @@ export default {
   },
   mounted() {
     this.clientHeight = window.innerHeight;
-    this.panelHeight = this.clientHeight - this.$refs.header.offsetHeight;
+    window.onload = () => {
+      // 无法获取高度硬核处理
+      this.panelHeight = this.clientHeight - this.$refs.header.offsetHeight;
+    }
     // 每隔1小时显示海报
     let advert = getCookie("advert");
     if (advert == process.env.VUE_APP_VERSION) {
