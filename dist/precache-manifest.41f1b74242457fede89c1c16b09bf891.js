@@ -1,38 +1,38 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "580613d4e9e7bcbf11c1",
+    "revision": "2cd260c11ef2718366a7",
     "url": "/css/about.cd271255.css"
   },
   {
-    "revision": "ce3c2b8211777c53d540",
+    "revision": "7175d4e724b1da1d225d",
     "url": "/css/account.9a8f73e0.css"
   },
   {
-    "revision": "e9feb0a244062a2c03f8",
-    "url": "/css/app.4c339b65.css"
+    "revision": "a1292efcdc91097bf24e",
+    "url": "/css/app.751d15f8.css"
   },
   {
-    "revision": "1c2027a80caeee7c0650",
+    "revision": "98ce0ae14b6c01ab0645",
     "url": "/css/chunk-vendors.d8216893.css"
   },
   {
-    "revision": "e6410804883b140037f9",
+    "revision": "0395cf11925f93619abf",
     "url": "/css/email.0269d413.css"
   },
   {
-    "revision": "e0231549dfd99cf99ef0",
+    "revision": "fdefe729bce867928d48",
     "url": "/css/error.49edf2a3.css"
   },
   {
-    "revision": "e9603682436562424dbf",
+    "revision": "f54b72512e6712c10e00",
     "url": "/css/garden.1968803e.css"
   },
   {
-    "revision": "beb76de0e1b20ba4bd03",
+    "revision": "1a5de90e6b074b66d886",
     "url": "/css/mitax.058d6fd2.css"
   },
   {
-    "revision": "b43b5174d05af0e2fe2d",
+    "revision": "e3bbc5707a05190c85a9",
     "url": "/css/steamer.1f11475e.css"
   },
   {
@@ -192,8 +192,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/home5.679248d5.png"
   },
   {
+    "revision": "9d32ae15aad50c4a80f460b47212cba6",
+    "url": "/img/home6.9d32ae15.png"
+  },
+  {
+    "revision": "6db6133694cdb047028b45e6750899b0",
+    "url": "/img/home7.6db61336.png"
+  },
+  {
     "revision": "ac03fb245a35ecd5e4cfe3e6a91b36d5",
-    "url": "/img/home6.ac03fb24.png"
+    "url": "/img/home8.ac03fb24.png"
   },
   {
     "revision": "7c9de5978bc674fbf997c517a2e59fb4",
@@ -228,47 +236,63 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/wechat.aa80fc0c.png"
   },
   {
-    "revision": "0b806eb053ba9080864e253fb52c142a",
+    "revision": "8ce5a5bd184ca49ce36618dcb12f8b23",
     "url": "/index.html"
   },
   {
-    "revision": "580613d4e9e7bcbf11c1",
-    "url": "/js/about-legacy.d20d621c.js"
+    "revision": "2cd260c11ef2718366a7",
+    "url": "/js/about.49cbb958.js"
   },
   {
-    "revision": "ce3c2b8211777c53d540",
-    "url": "/js/account-legacy.94ea342e.js"
+    "revision": "7175d4e724b1da1d225d",
+    "url": "/js/account.fd555317.js"
   },
   {
-    "revision": "e9feb0a244062a2c03f8",
-    "url": "/js/app-legacy.765c0cc5.js"
+    "revision": "a1292efcdc91097bf24e",
+    "url": "/js/app.44e6698e.js"
   },
   {
-    "revision": "1c2027a80caeee7c0650",
-    "url": "/js/chunk-vendors-legacy.e5c5e340.js"
+    "revision": "98ce0ae14b6c01ab0645",
+    "url": "/js/chunk-vendors.0236422f.js"
   },
   {
-    "revision": "e6410804883b140037f9",
-    "url": "/js/email-legacy.9bb799e9.js"
+    "revision": "0395cf11925f93619abf",
+    "url": "/js/email.02340012.js"
   },
   {
-    "revision": "e0231549dfd99cf99ef0",
-    "url": "/js/error-legacy.1c7319d5.js"
+    "revision": "fdefe729bce867928d48",
+    "url": "/js/error.ff3a78e1.js"
   },
   {
-    "revision": "e9603682436562424dbf",
-    "url": "/js/garden-legacy.2e9f7116.js"
+    "revision": "f54b72512e6712c10e00",
+    "url": "/js/garden.55177ea0.js"
   },
   {
-    "revision": "beb76de0e1b20ba4bd03",
-    "url": "/js/mitax-legacy.7e8082c9.js"
+    "revision": "1a5de90e6b074b66d886",
+    "url": "/js/mitax.cb29f53d.js"
   },
   {
-    "revision": "b43b5174d05af0e2fe2d",
-    "url": "/js/steamer-legacy.207706ed.js"
+    "revision": "e3bbc5707a05190c85a9",
+    "url": "/js/steamer.ab5039fe.js"
   },
   {
     "revision": "dfa23a797b6dc19de20548e352bc023b",
     "url": "/manifest.json"
+  },
+  {
+    "revision": "bd1ee9db2116ab082898f790376a8091",
+    "url": "/robots.txt"
+  },
+  {
+    "revision": "df10c62cfb528977afd818079aeab3ad",
+    "url": "/sitemap.txt"
+  },
+  {
+    "revision": "87b5bb9921ec7f0ea6bbd26315761095",
+    "url": "/sogousiteverification.txt.html"
+  },
+  {
+    "revision": "54d30c6cbe1329308703f6b14026f7e0",
+    "url": "/statics/js/vconsole.min.js"
   }
 ]);

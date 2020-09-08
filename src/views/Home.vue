@@ -59,7 +59,9 @@ export default {
         {name: "园区直招", path: "/garden", image: require("./../assets/image/home3.png")},
         {name: "爱税筹", path: "/mitax", image: require("./../assets/image/home4.png")},
         {name: "舟山自贸区", path: "/steamer", image: require("./../assets/image/home5.png")},
-        {name: "关于我们", path: "/about", image: require("./../assets/image/home6.png")},
+        {name: "股权服务", path: "/equity", image: require("./../assets/image/home6.png")},
+        {name: "在线预约", path: "/email", image: require("./../assets/image/home7.png")},
+        {name: "关于我们", path: "/about", image: require("./../assets/image/home8.png")},
       ]
     }
   },

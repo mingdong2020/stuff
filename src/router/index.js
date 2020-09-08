@@ -43,10 +43,18 @@ const routes = [
     component: () => import(/* webpackChunkName: "steamer" */ "../views/Steamer.vue")
   },
   {
+    path: "/equity",
+    name: "equity",
+    meta: {
+      key: 5
+    },
+    component: () => import(/* webpackChunkName: "steamer" */ "../views/Equity.vue")
+  },
+  {
     path: "/email",
     name: "Email",
     meta: {
-      key: 5
+      key: 6
     },
     component: () => import(/* webpackChunkName: "email" */ "../views/Email.vue")
   },
@@ -54,7 +62,7 @@ const routes = [
     path: "/about",
     name: "About",
     meta: {
-      key: 6
+      key: 7
     },
     component: () => import(/* webpackChunkName: "about" */ "../views/About.vue")
   }

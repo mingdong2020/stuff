@@ -32,6 +32,7 @@ export default {
         {name: "园区直招", path: "/garden"},
         {name: "爱税筹", path: "/mitax"},
         {name: "舟山自贸区", path: "/steamer"},
+        {name: "股权服务", path: "/equity"},
         {name: "在线预约", path: "/email"},
         {name: "关于我们", path: "/about"},
       ]
