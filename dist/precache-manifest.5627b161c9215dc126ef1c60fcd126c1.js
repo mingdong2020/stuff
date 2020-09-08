@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/account.9a8f73e0.css"
   },
   {
-    "revision": "a1292efcdc91097bf24e",
+    "revision": "428fe378dad3e397d3d5",
     "url": "/css/app.751d15f8.css"
   },
   {
@@ -32,8 +32,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/css/mitax.058d6fd2.css"
   },
   {
-    "revision": "e3bbc5707a05190c85a9",
-    "url": "/css/steamer.1f11475e.css"
+    "revision": "221c2f601384c8f6f6a6",
+    "url": "/css/steamer.cc467bd4.css"
   },
   {
     "revision": "ac881fc61538a9928e9ec99f95abdba3",
@@ -236,7 +236,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/wechat.aa80fc0c.png"
   },
   {
-    "revision": "8ce5a5bd184ca49ce36618dcb12f8b23",
+    "revision": "5384a14d5e1787ac41e4254ad53ef606",
     "url": "/index.html"
   },
   {
@@ -248,8 +248,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/account.fd555317.js"
   },
   {
-    "revision": "a1292efcdc91097bf24e",
-    "url": "/js/app.44e6698e.js"
+    "revision": "428fe378dad3e397d3d5",
+    "url": "/js/app.c41453a1.js"
   },
   {
     "revision": "98ce0ae14b6c01ab0645",
@@ -272,8 +272,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/js/mitax.cb29f53d.js"
   },
   {
-    "revision": "e3bbc5707a05190c85a9",
-    "url": "/js/steamer.ab5039fe.js"
+    "revision": "221c2f601384c8f6f6a6",
+    "url": "/js/steamer.96c0617d.js"
   },
   {
     "revision": "dfa23a797b6dc19de20548e352bc023b",
@@ -284,7 +284,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/robots.txt"
   },
   {
-    "revision": "df10c62cfb528977afd818079aeab3ad",
+    "revision": "7f09251819fcc912f6b1a91895306c82",
     "url": "/sitemap.txt"
   },
   {
