@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/precache-manifest.d127e538340a3df6c643bbfdb6354203.js"
+  "/precache-manifest.d09d191a89951f3b0bc8c495de1fe8ff.js"
 );
 
 workbox.core.setCacheNameDetails({prefix: "wealth"});

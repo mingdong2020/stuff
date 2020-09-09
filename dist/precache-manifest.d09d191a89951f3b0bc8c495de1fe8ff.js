@@ -1,5 +1,9 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
+    "revision": "e1d4aa7c7594f6fe1a1846b6d70ddf65",
+    "url": "/baidu_verify_FWN3RHZA8T.html"
+  },
+  {
     "revision": "d39bbb99b24c85d9799e9494f4cb19a3",
     "url": "/baidu_verify_X2xvL5cXN0.html"
   },
