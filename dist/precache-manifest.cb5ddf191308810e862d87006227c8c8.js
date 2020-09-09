@@ -236,7 +236,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/img/wechat.aa80fc0c.png"
   },
   {
-    "revision": "5384a14d5e1787ac41e4254ad53ef606",
+    "revision": "d2f4cdb303aa3a8da3b67b577dcaa680",
     "url": "/index.html"
   },
   {
