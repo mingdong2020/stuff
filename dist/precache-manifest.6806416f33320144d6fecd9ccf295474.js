@@ -296,7 +296,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sitemap.txt"
   },
   {
-    "revision": "2ede404649efd89b131e406e66df211e",
+    "revision": "5dee7c2810767905051f18e683515aea",
     "url": "/sogousiteverification.txt.html"
   },
   {
