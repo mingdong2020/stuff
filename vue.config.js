@@ -23,7 +23,7 @@ module.exports = {
           }
           return context.html.replace(
             /<title>[^<]*<\/title>/i,
-            `<meta name="author" content="`+ inform[context.route].author +`" /><meta name="keywords" content="` + inform[context.route].keywords + `" /><meta name="description" content="` + inform[context.route].description + `" /><title>` + inform[context.route].title + `</title>`
+            `<meta name="author" content="`+ inform[context.route].author +`" /><meta name="keywords" content="` + inform[context.route].keywords + `" /><meta name="description" content="` + inform[context.route].description + `" /><script type="text/javascript" src="https://kf9.kuaishang.cn/bs/ks.j?cI=930049&fI=63543&ism=1" charset="utf-8"></script><title>` + inform[context.route].title + `</title>`
           )
         }
       })
