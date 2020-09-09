@@ -6,7 +6,6 @@ import store from "./store"
 import { injectScript } from "@/assets/js/usualUtils.js"
 
 process.env.NODE_ENV === "production" ? "" : injectScript("/statics/js/vconsole.min.js")
-injectScript("https://kf9.kuaishang.cn/bs/ks.j?cI=930049&fI=63543&ism=1")
 
 router.beforeEach((to, from, next) => {
   if (to.name == "Error") {
