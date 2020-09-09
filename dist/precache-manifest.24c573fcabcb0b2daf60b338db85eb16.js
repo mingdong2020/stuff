@@ -296,6 +296,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/sitemap.txt"
   },
   {
+    "revision": "2ede404649efd89b131e406e66df211e",
+    "url": "/sogousiteverification.txt.html"
+  },
+  {
     "revision": "54d30c6cbe1329308703f6b14026f7e0",
     "url": "/statics/js/vconsole.min.js"
   }
