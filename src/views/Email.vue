@@ -95,7 +95,6 @@ export default {
     }
   },
   mounted() {
-    console.log('aaa', this.$store.getters.getStateType);
     this.$nextTick(() => {
       document.body.style.display = "block";
     })
@@ -158,7 +157,6 @@ export default {
           that.btnStatus = true;
         })
         .catch((err) => {
-          console.log(err);
           that.btnStatus = true;
         })
       }

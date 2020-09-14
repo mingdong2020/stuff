@@ -10,7 +10,7 @@
         <em>REASON</em>
       </div>
       <template v-for="(item, index) in reasonData">
-        <div :key="index" class="account-list">
+        <div class="account-list" :key="index">
           <div class="account-item">
             <img :src="item.image" alt="明动咨询为您服务" />
             <span :class="'item-label' + index">{{ item.birth }}</span>
@@ -27,7 +27,7 @@
       </div>
       <div class="account-strip">
         <template v-for="(item, index) in advantageData">
-          <div :key="index" class="strip-item">
+          <div class="strip-item" :key="index">
             <h3>{{ item.name }}</h3>
             <div>
               <p>{{ item.article }}</p>
@@ -46,7 +46,7 @@
       <div class="account-circle">
         <span>明动服务</span>
         <template v-for="(item, index) in circleData">
-          <span :key="index" v-html="item.name"></span>
+          <span v-html="item.name" :key="index"></span>
         </template>
       </div>
     </div>
