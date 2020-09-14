@@ -1,12 +1,21 @@
 const path = require("path")
 const seoConfig = require("./config.json")
 const PrerenderSPAPlugin = require("prerender-spa-plugin")
+const productionGzipExtensions = /\.(js|css|json|txt|html|ico|svg)(\?.*)?$/i;
+const CompressionPlugin = require("compression-webpack-plugin")
 module.exports = {
   publicPath: "/",
   // publicPath: process.env.NODE_ENV === "production" ? './' : '/',
   productionSourceMap: process.env.NODE_ENV === "production" ? false : true,
   configureWebpack: {
     plugins: [
+      new CompressionPlugin({
+        filename: '[path].gz[query]',
+        algorithm: 'gzip',
+        test: productionGzipExtensions,
+        threshold: 2048,
+        minRatio: 0.8
+      }),
       new PrerenderSPAPlugin({
         staticDir: path.join(__dirname, "dist"),
         routes: [ "/", "/account", "/garden", "/mitax", "/steamer", "/about", "/error", "/email" ],
