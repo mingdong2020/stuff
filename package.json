@@ -3,8 +3,8 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "servepre": "vue-cli-service serve --mode pre",
-    "serveprd": "vue-cli-service serve --mode prd",
+    "pre": "vue-cli-service serve --mode pre",
+    "prd": "vue-cli-service serve --mode prd",
     "buildpre": "vue-cli-service build --mode pre",
     "buildprd": "vue-cli-service build --modern --mode prd",
     "test:unit": "vue-cli-service test:unit",

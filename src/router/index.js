@@ -6,7 +6,7 @@ const routes = [
     path: "/",
     name: "Home",
     meta: {
-      key: 0
+      key: "home"
     },
     component: Home
   },
@@ -14,7 +14,7 @@ const routes = [
     path: "/account",
     name: "Account",
     meta: {
-      key: 1
+      key: "account"
     },
     component: () => import(/* webpackChunkName: "account" */ "../views/Account.vue")
   },
@@ -22,7 +22,7 @@ const routes = [
     path: "/garden",
     name: "Garden",
     meta: {
-      key: 2
+      key: "garden"
     },
     component: () => import(/* webpackChunkName: "garden" */ "../views/Garden.vue")
   },
@@ -30,7 +30,7 @@ const routes = [
     path: "/mitax",
     name: "Mitax",
     meta: {
-      key: 3
+      key: "mitax"
     },
     component: () => import(/* webpackChunkName: "mitax" */ "../views/Mitax.vue")
   },
@@ -38,23 +38,39 @@ const routes = [
     path: "/steamer",
     name: "Steamer",
     meta: {
-      key: 4
+      key: "steamer"
     },
     component: () => import(/* webpackChunkName: "steamer" */ "../views/Steamer.vue")
   },
   {
     path: "/equity",
-    name: "equity",
+    name: "Equity",
     meta: {
-      key: 5
+      key: "equity"
     },
     component: () => import(/* webpackChunkName: "steamer" */ "../views/Equity.vue")
+  },
+  {
+    path: "/stock/:key",
+    name: "Stock",
+    meta: {
+      key: "stock"
+    },
+    component: () => import(/* webpackChunkName: "stock" */ "../views/Stock.vue")
+  },
+  {
+    path: "/detail/:id",
+    name: "Detail",
+    meta: {
+      key: "detail"
+    },
+    component: () => import(/* webpackChunkName: "detail" */ "../views/Detail.vue")
   },
   {
     path: "/email",
     name: "Email",
     meta: {
-      key: 6
+      key: "email"
     },
     component: () => import(/* webpackChunkName: "email" */ "../views/Email.vue")
   },
@@ -62,7 +78,7 @@ const routes = [
     path: "/about",
     name: "About",
     meta: {
-      key: 7
+      key: "about"
     },
     component: () => import(/* webpackChunkName: "about" */ "../views/About.vue")
   }

@@ -13,7 +13,7 @@ export function axiosFetch(parm) {
   return new Promise((ret, rej) => {
     const instance = axios.create({
       baseURL: process.env.NODE_ENV === "production" ? "https://mdqygl.cn" : "http://127.0.0.1:8000/",
-      timeout: 6000,
+      timeout: 0, // 0 表示无超时时间
       headers: {
         // "Access-Control-Allow-Origin": "*",
         // "Access-Control-Allow-Methods": "GET, POST",
@@ -90,9 +90,10 @@ export function toastBox(text = "网络错误～") {
  * 【共用方法】loading
  */
 let loadStatus = true;
-export function loadedBox(type, text = null) {
+export function loadedBox(type, text = null, cover = false) {
   if (type && loadStatus) {
     loadStatus = false;
+    let ground = cover ? 0.28 : 0;
     let loaded = document.createElement("div");
     loaded.id = "loaded";
     loaded.style.opacity = 0;
@@ -101,7 +102,7 @@ export function loadedBox(type, text = null) {
     loaded.style.left = 0;
     loaded.style.width = "100%";
     loaded.style.height = "100vh";
-    loaded.style.background = "rgba(0, 0, 0, 0.28)";
+    loaded.style.background = "rgba(0, 0, 0, " + ground + ")";
     loaded.style.zIndex = "999";
     loaded.innerHTML = `<div style="position: absolute; top: 50%; left: 50%; width: 1.6rem; height: 1.6rem; background: rgba(0, 0, 0, 0.68); transform: translate(-50%, -50%); border-radius: 0.1rem;">
       <svg viewBox="-5 3 70 70" style="color: rgb(255, 255, 255)">
@@ -131,5 +132,20 @@ export function loadedBox(type, text = null) {
         loadStatus = true;
       }
     }, 30);
+  }
+}
+
+/**
+ * 【共用方法】localStorage
+ */
+export function setItem(key, val) {
+  const value = encodeURIComponent(JSON.stringify(val));
+  localStorage.setItem(key, value);
+}
+
+export function getItem(key) {
+  let value = localStorage.getItem(key);
+  if (value) {
+    return JSON.parse(decodeURIComponent(value));
   }
 }

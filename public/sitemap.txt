@@ -4,6 +4,8 @@ http://mdtzzx.com/garden/
 http://mdtzzx.com/mitax/
 http://mdtzzx.com/steamer/
 http://mdtzzx.com/equity/
+http://mdtzzx.com/stock/
+http://mdtzzx.com/detail/
 http://mdtzzx.com/about/
 http://mdtzzx.com/email/
 http://www.mdtzzx.com/
@@ -12,5 +14,7 @@ http://www.mdtzzx.com/garden/
 http://www.mdtzzx.com/mitax/
 http://www.mdtzzx.com/steamer/
 http://www.mdtzzx.com/equity/
+http://www.mdtzzx.com/stock/
+http://www.mdtzzx.com/detail/
 http://www.mdtzzx.com/about/
 http://www.mdtzzx.com/email/

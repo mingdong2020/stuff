@@ -3,7 +3,7 @@ import { isWeChat, isIos } from "@/assets/js/usualUtils.js"
 
 export default createStore({
   state: {
-    stateIndex: 0, // 是否首页
+    stateIndex: "home", // 是否首页
     stateHead: true, // 显示头部固定栏
     stateType: true, // 控制顶部固定栏目全屏和非全屏
     stateToggle: false, // 控制右侧菜单栏目显示隐藏

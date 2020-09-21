@@ -6,8 +6,8 @@
         <img src="~@/assets/image/conceal.png" alt="明动咨询" />
       </div>
       <div class="options-box">
-        <template v-for="(item, index) in list">
-          <div @click="onRouter(item.path)" :class="$store.getters.getStateIndex == index ? 'options-list options-list-active' : 'options-list'" :key="index">
+        <template v-for="(item, index) in listData">
+          <div @click="onRouter(item.path)" :class="$store.getters.getStateIndex == item.key ? 'options-list options-list-active' : 'options-list'" :key="index">
             <span>{{ item.name }}</span>
             <img src="~@/assets/image/boult.png" alt="明动咨询" />
           </div>
@@ -18,6 +18,7 @@
 </template>
 
 <script>
+import { isWeChat, isIos } from "@/assets/js/usualUtils.js"
 export default {
   name: "Options",
   props: {
@@ -26,15 +27,15 @@ export default {
   data() {
     return {
       cover: false,
-      list: [
-        {name: "首页", path: "/"},
-        {name: "财务代理", path: "/account"},
-        {name: "园区直招", path: "/garden"},
-        {name: "爱税筹", path: "/mitax"},
-        {name: "舟山自贸区", path: "/steamer"},
-        {name: "股权服务", path: "/equity"},
-        {name: "在线预约", path: "/email"},
-        {name: "关于我们", path: "/about"},
+      listData: [
+        {name: "首页", path: "/", key: "home"},
+        {name: "财务代理", path: "/account", key: "account"},
+        {name: "园区直招", path: "/garden", key: "garden"},
+        {name: "爱税筹", path: "/mitax", key: "mitax"},
+        {name: "舟山自贸区", path: "/steamer", key: "steamer"},
+        {name: "股权服务", path: "/equity", key: "equity"},
+        {name: "在线预约", path: "/email", key: "email"},
+        {name: "关于我们", path: "/about", key: "about"},
       ]
     }
   },
@@ -60,9 +61,15 @@ export default {
       this.$emit("btn-cancel");
     },
     onRouter(path) {
-      this.$router.replace({
-        path: path
-      })
+      if (isWeChat() && isIos()) {
+        this.$router.replace({
+          path: path
+        })
+      } else {
+        this.$router.push({
+          path: path
+        })
+      }
     }
   }
 }

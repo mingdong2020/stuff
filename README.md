@@ -25,6 +25,8 @@ applet => 小程序预约页面专用
      |         |- Home.vue    首页
      |         |- Error.vue   错误页面
      |         |- Email.vue   预约页面
+     |         |- Equity.vue  股权信息
+     |         |- Stock.vue   股权详情
      |- main.js 入口文件
 
 ### 项目

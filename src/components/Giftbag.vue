@@ -148,7 +148,7 @@ export default {
           }
           that.btnStatus = true;
         })
-        .catch((err) => {
+        .catch(() => {
           that.btnStatus = true;
         })
       }

@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import { getCookie, setCookie } from "@/assets/js/usualUtils.js"
+import { getCookie, setCookie, isWeChat, isIos } from "@/assets/js/usualUtils.js"
 import Poster from "@/components/Poster.vue"
 import Options from "@/components/Options.vue"
 import Giftbag from "@/components/Giftbag.vue"
@@ -95,9 +95,15 @@ export default {
   },
   methods: {
     onIndex() {
-      this.$router.replace({
-        name: "Home"
-      })
+      if (isWeChat() && isIos()) {
+        this.$router.replace({
+          name: "Home"
+        })
+      } else {
+        this.$router.push({
+          name: "Home"
+        })
+      }
     },
     onToggle() {
       let toggle = !this.$store.getters.getStateToggle;
@@ -109,13 +115,19 @@ export default {
     },
     onPoster() {
       this.$store.commit("setStatePoster", false);
-      this.$router.replace({
-        name: "Mitax"
-      })
+      if (isWeChat() && isIos()) {
+        this.$router.replace({
+          name: "Mitax"
+        })
+      } else {
+        this.$router.push({
+          name: "Mitax"
+        })
+      }
     },
     onSlide() {
       setTimeout(() => {
-        if (this.$store.getters.getStateIndex == 0) {
+        if (this.$store.getters.getStateIndex == "home") {
           this.$emit("btn-slider");
         }
       }, 3600);

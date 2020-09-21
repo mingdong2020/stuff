@@ -20,7 +20,7 @@ router.beforeEach((to, from, next) => {
     store.commit("setStateType", false);
   }
   store.commit("setStateToggle", false);
-  store.commit("setStateIndex", to.meta.key || 0);
+  store.commit("setStateIndex", to.meta.key || "home");
   next();
 })
 

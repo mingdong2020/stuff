@@ -41,6 +41,7 @@
 <script>
 import "swiper/swiper.less";
 import Swiper from "swiper/swiper-bundle.js";
+import { isWeChat, isIos } from "@/assets/js/usualUtils.js"
 export default {
   name: "Home",
   props: {
@@ -121,9 +122,15 @@ export default {
       }
     },
     onRouter(path) {
-      this.$router.replace({
-        path: path
-      })
+      if (isWeChat() && isIos()) {
+        this.$router.replace({
+          path: path
+        })
+      } else {
+        this.$router.push({
+          path: path
+        })
+      }
     }
   }
 }
@@ -266,7 +273,7 @@ export default {
         }
         .slide-statement {
           position: absolute;
-          bottom: 1.72rem;
+          bottom: 1.22rem;
           left: 0;
           margin: 0.42rem 0 0 0;
           width: 100%;
