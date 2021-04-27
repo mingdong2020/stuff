@@ -30,7 +30,7 @@
             </div>
           </div>
           <div class="slide-statement">
-            <a href="http://www.beian.miit.gov.cn" target="_blank">沪ICP备17000006号</a>
+            <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备17000006号</a>
           </div>
         </div>
       </div>
