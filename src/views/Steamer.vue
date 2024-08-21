@@ -29,7 +29,7 @@
       </div>
       <img src="~@/assets/image/choose.jpg" alt="明动咨询">
     </div>
-    <div class="steamer-count">
+    <!-- <div class="steamer-count">
       <div class="count-title">
         <span></span>
         <h3>财政扶持预计</h3>
@@ -53,7 +53,7 @@
           <span>点击计算</span>
         </div>
       </div>
-    </div>
+    </div> -->
     <div class="steamer-case">
       <div class="case-title">
         <span></span>

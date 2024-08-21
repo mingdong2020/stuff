@@ -10,16 +10,16 @@
     <div class="garden-virtue">
       <div>
         <span>1.官方合作，园区直招</span>
-        <span>2.可高达40%财政支持</span>
-        <span>3.合法享受政策优惠。</span>
-        <span>4.合法降低运营成本。</span>
-        <span>5.显著提高营业利润。</span>
+        <!-- <span>2.可高达40%财政支持</span> -->
+        <span>2.合法享受政策优惠。</span>
+        <span>3.合法降低运营成本。</span>
+        <span>4.显著提高营业利润。</span>
       </div>
     </div>
     <div class="garden-question">
       <img src="~@/assets/image/garden.jpg" alt="园区注册" />
     </div>
-    <div class="garden-count">
+    <!-- <div class="garden-count">
       <div class="garden-head">
         <h3>财政扶持预计</h3>
       </div>
@@ -56,7 +56,7 @@
           <span>点击计算</span>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 
@@ -179,7 +179,7 @@ export default {
       > span {
         position: relative;
         display: block;
-        margin: 0.18rem 0 0 0;
+        margin: 0.24rem 0 0 0;
         padding: 0.08rem 0.04rem 0.08rem 0.22rem;
         width: 3.5rem;
         font-size: 0.3rem;
