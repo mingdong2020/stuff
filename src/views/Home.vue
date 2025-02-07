@@ -1,8 +1,14 @@
 <template>
   <div class="home">
-    <div class="swiper-container" :style="'height:' + clientHeight +'px;'">
+    <div class="swiper-container" :style="'height:' + clientHeight + 'px;'">
       <div class="swiper-wrapper">
-        <div :class="bannerRatio ? 'swiper-slide slide-banner banner-aito' : 'swiper-slide slide-banner'">
+        <div
+          :class="
+            bannerRatio
+              ? 'swiper-slide slide-banner banner-aito'
+              : 'swiper-slide slide-banner'
+          "
+        >
           <div class="slide-slogan">
             <h1>我们研究并提供</h1>
             <h1>企业需要的服务</h1>
@@ -14,15 +20,28 @@
           </div>
         </div>
         <div class="swiper-slide slide-inpuk">
-          <div class="slide-inform" :style="clientRatio == 1 ? 'margin: 0.44rem auto 0 auto;' : 'margin: 1.34rem auto 0 auto;'">
-            <h3>明动咨询成立于2013年10月18日, 是第一批入驻上海自贸区的咨询行业公司。</h3><br>
-            <h3>我们主要服务于中国(上海)自由贸易试验区的招商引资、客户运营咨询，资产管理、投资管理、融资租赁、商业保理以及其他类金融行业咨询服务。</h3>
+          <div
+            class="slide-inform"
+            :style="
+              clientRatio == 1
+                ? 'margin: 0.44rem auto 0 auto;'
+                : 'margin: 1.34rem auto 0 auto;'
+            "
+          >
+            <h3>
+              明动咨询成立于2013年10月18日,
+              是第一批入驻上海自贸区的咨询行业公司。
+            </h3>
+            <br />
+            <h3>
+              我们主要服务于中国(上海)自由贸易试验区的招商引资、客户运营咨询，资产管理、投资管理、融资租赁、商业保理以及其他类金融行业咨询服务。
+            </h3>
           </div>
           <div class="slide-bus">
             <h2>我们的业务</h2>
             <div class="slide-grid">
-              <template v-for="(item, index) in listData">
-                <div class="slide-list" @click="onRouter(item.path)" :key="index">
+              <template v-for="(item, index) in listData" :key="index">
+                <div class="slide-list" @click="onRouter(item.path)">
                   <img :src="item.image" alt="明动咨询" />
                   <span>{{ item.name }}</span>
                 </div>
@@ -30,7 +49,9 @@
             </div>
           </div>
           <div class="slide-statement">
-            <a href="https://beian.miit.gov.cn/" target="_blank">沪ICP备17000006号</a>
+            <a href="https://beian.miit.gov.cn/" target="_blank"
+              >沪ICP备17000006号</a
+            >
           </div>
         </div>
       </div>
@@ -41,11 +62,11 @@
 <script>
 import "swiper/swiper.less";
 import Swiper from "swiper/swiper-bundle.js";
-import { isWeChat, isIos } from "@/assets/js/usualUtils.js"
+import { isWeChat, isIos } from "@/assets/js/usualUtils.js";
 export default {
   name: "Home",
   props: {
-    slider: Boolean
+    slider: Boolean,
   },
   data() {
     return {
@@ -56,25 +77,53 @@ export default {
       bannerRatio: false, // 首屏图片自适应
       hasHandler: false, // 用户是否手动滑动过
       listData: [
-        {name: "财务代理", path: "/account", image: require("./../assets/image/home2.png")},
-        {name: "园区直招", path: "/garden", image: require("./../assets/image/home3.png")},
-        {name: "爱税筹", path: "/mitax", image: require("./../assets/image/home4.png")},
-        {name: "舟山自贸区", path: "/steamer", image: require("./../assets/image/home5.png")},
-        {name: "股权服务", path: "/equity", image: require("./../assets/image/home6.png")},
-        {name: "在线预约", path: "/email", image: require("./../assets/image/home7.png")},
-        {name: "关于我们", path: "/about", image: require("./../assets/image/home8.png")},
-      ]
-    }
+        {
+          name: "财务代理",
+          path: "/account",
+          image: require("./../assets/image/home2.png"),
+        },
+        {
+          name: "园区直招",
+          path: "/garden",
+          image: require("./../assets/image/home3.png"),
+        },
+        // {
+        //   name: "爱税筹",
+        //   path: "/mitax",
+        //   image: require("./../assets/image/home4.png"),
+        // },
+        {
+          name: "舟山自贸区",
+          path: "/steamer",
+          image: require("./../assets/image/home5.png"),
+        },
+        {
+          name: "股权服务",
+          path: "/equity",
+          image: require("./../assets/image/home6.png"),
+        },
+        {
+          name: "在线预约",
+          path: "/email",
+          image: require("./../assets/image/home7.png"),
+        },
+        {
+          name: "关于我们",
+          path: "/about",
+          image: require("./../assets/image/home8.png"),
+        },
+      ],
+    };
   },
   watch: {
     slider: {
-      handler: function() {
+      handler: function () {
         if (!this.hasHandler && this.bannerSwiper.activeIndex == 0) {
           this.bannerSwiper.slideTo(1, 1000, false);
           this.$store.commit("setStateType", false);
         }
-      }
-    }
+      },
+    },
   },
   mounted() {
     let that = this;
@@ -102,17 +151,20 @@ export default {
         observer: true,
         observeParents: true,
         on: {
-          slideChangeTransitionStart: function() {
+          slideChangeTransitionStart: function () {
             that.hasHandler = true;
-            that.$store.commit("setStateType", this.activeIndex == 0 ? true : false);
-          }
-        }
+            that.$store.commit(
+              "setStateType",
+              this.activeIndex == 0 ? true : false
+            );
+          },
+        },
       });
 
       setTimeout(() => {
         document.body.style.display = "block";
       }, 300);
-    })
+    });
   },
   methods: {
     onSilder() {
@@ -124,16 +176,16 @@ export default {
     onRouter(path) {
       if (isWeChat() && isIos()) {
         this.$router.replace({
-          path: path
-        })
+          path: path,
+        });
       } else {
         this.$router.push({
-          path: path
-        })
+          path: path,
+        });
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -144,7 +196,7 @@ export default {
       .swiper-slide {
         width: 100%;
         height: 100%;
-        background-color: #FFFFFF;
+        background-color: #ffffff;
       }
       .slide-banner {
         background: url("~@/assets/image/banner.jpg") no-repeat;
@@ -154,7 +206,7 @@ export default {
           margin: 4.74rem 0 0 0.5rem;
           > h1 {
             font-size: 0.5rem;
-            color: #FFFFFF;
+            color: #ffffff;
             font-weight: normal;
             line-height: 0.5rem;
             &:nth-child(1) {
@@ -183,7 +235,7 @@ export default {
           width: 0.8rem;
           height: 0.8rem;
           border-radius: 50px;
-          border: 0.02rem solid #FFFFFF;
+          border: 0.02rem solid #ffffff;
           overflow: hidden;
           z-index: 888;
           > img {
@@ -195,28 +247,40 @@ export default {
             -o-animation: arrowAnimat 1s linear 0s infinite normal;
             z-index: 999;
           }
-          @keyframes arrowAnimat
-          {
-            0%   {margin-top: -1.2rem;}
-            100% {margin-top: 1.2rem;}
+          @keyframes arrowAnimat {
+            0% {
+              margin-top: -1.2rem;
+            }
+            100% {
+              margin-top: 1.2rem;
+            }
           }
-          
-          @-moz-keyframes arrowAnimat
-          {
-            0%   {margin-top: -1.2rem;}
-            100% {margin-top: 1.2rem;}
+
+          @-moz-keyframes arrowAnimat {
+            0% {
+              margin-top: -1.2rem;
+            }
+            100% {
+              margin-top: 1.2rem;
+            }
           }
-          
-          @-webkit-keyframes arrowAnimat
-          {
-            0%   {margin-top: -1.2rem;}
-            100% {margin-top: 1.2rem;}
+
+          @-webkit-keyframes arrowAnimat {
+            0% {
+              margin-top: -1.2rem;
+            }
+            100% {
+              margin-top: 1.2rem;
+            }
           }
-          
-          @-o-keyframes arrowAnimat
-          {
-            0%   {margin-top: -1.2rem;}
-            100% {margin-top: 1.2rem;}
+
+          @-o-keyframes arrowAnimat {
+            0% {
+              margin-top: -1.2rem;
+            }
+            100% {
+              margin-top: 1.2rem;
+            }
           }
         }
       }

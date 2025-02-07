@@ -11,11 +11,15 @@
       </div>
       <div class="map-panel">
         <img src="~@/assets/image/map.jpg" alt="舟山公司注册" />
-        <p>舟山岛南部片区：25.35平方公里，舟山岛南部片区由新城区块、小干岛区块、沈家门区块、东港区块、朱家尖区块和相关海域组成。<em>重点发展大宗商品交易、航空制造、零部件物流、研发设计及相关配套产业，建设舟山航空产业园，着力发展水产品贸易、海洋旅游、海水利用、现代商贸、金融服务、航运、信息咨询、高新技术等产业。</em></p>
+        <p>
+          舟山岛南部片区：25.35平方公里，舟山岛南部片区由新城区块、小干岛区块、沈家门区块、东港区块、朱家尖区块和相关海域组成。<em
+            >重点发展大宗商品交易、航空制造、零部件物流、研发设计及相关配套产业，建设舟山航空产业园，着力发展水产品贸易、海洋旅游、海水利用、现代商贸、金融服务、航运、信息咨询、高新技术等产业。</em
+          >
+        </p>
       </div>
       <div class="map-picture">
-        <template v-for="(item, index) in pictureData">
-          <div class="map-list" :key="index">
+        <template v-for="(item, index) in pictureData" :key="index">
+          <div class="map-list">
             <img :src="item.image" alt="明动咨询" />
           </div>
         </template>
@@ -27,7 +31,7 @@
         <h3>选择我们的理由</h3>
         <span></span>
       </div>
-      <img src="~@/assets/image/choose.jpg" alt="明动咨询">
+      <img src="~@/assets/image/choose.jpg" alt="明动咨询" />
     </div>
     <!-- <div class="steamer-count">
       <div class="count-title">
@@ -60,11 +64,11 @@
         <h3>案例展示</h3>
         <span></span>
       </div>
-      <div class="case-swiper" style="z-index: 666;">
+      <div class="case-swiper" style="z-index: 666">
         <div class="swiper-container">
           <div class="swiper-wrapper">
-            <template v-for="(item, index) in bannerData">
-              <div class="swiper-slide" :key="index">
+            <template v-for="(item, index) in bannerData" :key="index">
+              <div class="swiper-slide">
                 <img :src="item.image" alt="明动咨询" />
               </div>
             </template>
@@ -94,41 +98,41 @@
         <img src="~@/assets/image/coop07.jpg" alt="明动咨询" />
       </div>
     </div>
-    <Dialog :data="resultData" @btn-dialog="onSure"/>
+    <Dialog :data="resultData" @btn-dialog="onSure" />
   </div>
 </template>
 
 <script>
-import Dialog from "@/components/Dialog.vue"
+import Dialog from "@/components/Dialog.vue";
 import "swiper/swiper.less";
 import Swiper from "swiper/swiper-bundle.js";
-import { loadedBox, toastBox } from "@/assets/js/appUtils.js"
+import { loadedBox, toastBox } from "@/assets/js/appUtils.js";
 export default {
   name: "Steamer",
   components: {
-    Dialog
+    Dialog,
   },
   data() {
     return {
       pictureData: [
         {
-          image: require("./../assets/image/des01.jpg")
+          image: require("./../assets/image/des01.jpg"),
         },
         {
-          image: require("./../assets/image/des02.jpg")
+          image: require("./../assets/image/des02.jpg"),
         },
         {
-          image: require("./../assets/image/des03.jpg")
+          image: require("./../assets/image/des03.jpg"),
         },
         {
-          image: require("./../assets/image/des04.jpg")
+          image: require("./../assets/image/des04.jpg"),
         },
         {
-          image: require("./../assets/image/des05.jpg")
+          image: require("./../assets/image/des05.jpg"),
         },
         {
-          image: require("./../assets/image/des06.jpg")
-        }
+          image: require("./../assets/image/des06.jpg"),
+        },
       ],
       btnPush: 1,
       taxCountAdd: null,
@@ -140,41 +144,41 @@ export default {
       bannerIndex: 0,
       bannerData: [
         {
-          image: require("./../assets/image/card01.jpg")
+          image: require("./../assets/image/card01.jpg"),
         },
         {
-          image: require("./../assets/image/card02.jpg")
+          image: require("./../assets/image/card02.jpg"),
         },
         {
-          image: require("./../assets/image/card03.jpg")
-        }
+          image: require("./../assets/image/card03.jpg"),
+        },
       ],
       resultData: {
         status: false,
         title: "预计年财政支持(元)",
         add: Number,
-        get: Number
-      }
-    }
+        get: Number,
+      },
+    };
   },
   mounted() {
     let that = this;
     // 初始化模块
     that.bannerSwiper = new Swiper(".case-swiper .swiper-container", {
       mousewheel: true,
-      loop : true,
+      loop: true,
       autoplay: true,
       on: {
-        slideChangeTransitionStart: function() {
+        slideChangeTransitionStart: function () {
           that.bannerIndex = this.activeIndex;
-        }
-      }
+        },
+      },
     });
     // 内滚动还原
     document.getElementById("scroll").scrollTo(0, 0);
     this.$nextTick(() => {
       document.body.style.display = "block";
-    })
+    });
   },
   methods: {
     onCount() {
@@ -188,7 +192,7 @@ export default {
           if (total >= 100000 && total < 3000000) {
             that.addIncome = (that.taxCountAdd * 0.43 * 0.7).toFixed(2);
             that.getIncome = (that.taxCountGet * 0.343 * 0.8).toFixed(2);
-          } else if (total >=3000000 && total < 10000000) {
+          } else if (total >= 3000000 && total < 10000000) {
             that.addIncome = (that.taxCountAdd * 0.43 * 0.75).toFixed(2);
             that.getIncome = (that.taxCountGet * 0.343 * 0.8).toFixed(2);
           } else if (total > 10000000) {
@@ -204,7 +208,7 @@ export default {
           loadedBox(false);
           that.btnPush = 1;
           that.btnStatus = true;
-      }, 1800);
+        }, 1800);
       } else {
         toastBox("请输入增值税或所得税");
       }
@@ -218,9 +222,9 @@ export default {
     },
     onSure() {
       this.resultData.status = false;
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -230,7 +234,7 @@ export default {
   .steamer-banner {
     width: 7.5rem;
     height: 3.45rem;
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
     > img {
       width: 100%;
       height: 100%;
@@ -387,7 +391,7 @@ export default {
             border: 0px;
             outline: none;
             -webkit-appearance: none;
-            border-bottom: 1px solid #EEEEEE;
+            border-bottom: 1px solid #eeeeee;
           }
           input:-moz-placeholder {
             font-size: 0.3rem;

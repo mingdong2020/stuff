@@ -4,26 +4,42 @@
       <h3>{{ onTitle() }}</h3>
       <div class="stock-panel">
         <div class="stock-nature">
-          <div class="stock-nature-title">股权性质: </div>
+          <div class="stock-nature-title">股权性质:</div>
           <div class="stock-nature-box">
-            <template v-for="(item, index) in stockNature">
-              <span :key="index" :style="natureStock == index ? 'background-color: #D63F43; color: #ffffff;' : ''" @click="onTabber(0, index)">{{ item }}</span>
+            <template v-for="(item, index) in stockNature" :key="index">
+              <span
+                :style="
+                  natureStock == index
+                    ? 'background-color: #D63F43; color: #ffffff;'
+                    : ''
+                "
+                @click="onTabber(0, index)"
+                >{{ item }}</span
+              >
             </template>
           </div>
         </div>
         <div class="stock-address">
-          <div class="stock-address-title">注册地址: </div>
+          <div class="stock-address-title">注册地址:</div>
           <div class="stock-address-box">
-            <template v-for="(item, index) in stockAddress">
-              <span :key="index" :style="addressStock == index ? 'background-color: #D63F43; color: #ffffff;' : ''" @click="onTabber(1, index)">{{ item }}</span>
+            <template v-for="(item, index) in stockAddress" :key="index">
+              <span
+                :style="
+                  addressStock == index
+                    ? 'background-color: #D63F43; color: #ffffff;'
+                    : ''
+                "
+                @click="onTabber(1, index)"
+                >{{ item }}</span
+              >
             </template>
           </div>
         </div>
       </div>
     </div>
     <div class="stock-wind">
-      <template v-for="(item, index) in countData">
-        <div class="stock-wind-list" :key="index" @click="onRouter(item)">
+      <template v-for="(item, index) in countData" :key="index">
+        <div class="stock-wind-list" @click="onRouter(item)">
           <div class="stock-wind-img">
             <img :src="item.pic_card" alt="" />
           </div>
@@ -48,8 +64,8 @@
 </template>
 
 <script>
-import { axiosFetch, getItem, setItem } from "@/assets/js/appUtils"
-import { isWeChat, isIos } from "@/assets/js/usualUtils.js"
+import { axiosFetch, getItem, setItem } from "@/assets/js/appUtils";
+import { isWeChat, isIos } from "@/assets/js/usualUtils.js";
 export default {
   name: "Stock",
   data() {
@@ -61,21 +77,21 @@ export default {
       countData: [],
       natureStock: 0,
       addressStock: Number,
-    }
+    };
   },
   watch: {
     natureStock: {
-      handler: function() {
+      handler: function () {
         this.onCount();
       },
-      deep: true
+      deep: true,
     },
     addressStock: {
-      handler: function() {
+      handler: function () {
         this.onCount();
       },
-      deep: true
-    }
+      deep: true,
+    },
   },
   created() {
     this.stockKey = this.$route.params.key;
@@ -85,7 +101,7 @@ export default {
     document.getElementById("scroll").scrollTo(0, 0);
     this.$nextTick(() => {
       document.body.style.display = "block";
-    })
+    });
   },
   methods: {
     initData() {
@@ -94,22 +110,21 @@ export default {
         method: "GET",
         url: "api/equity/" + that.stockKey,
         load: "请求中..",
-        params: {}
+        params: {},
       })
-      .then((res) => {
-        if (res.status) {
-          that.stockData = res.data;
-          that.addressStock = 0;
-        }
-      })
-      .catch(() => {
-      })
+        .then((res) => {
+          if (res.status) {
+            that.stockData = res.data;
+            that.addressStock = 0;
+          }
+        })
+        .catch(() => {});
     },
     onTitle() {
       return getItem("title");
     },
     onTabber(key, val) {
-      switch(key) {
+      switch (key) {
         case 0:
           this.natureStock = val;
           break;
@@ -121,7 +136,10 @@ export default {
     onCount() {
       let arr = [];
       for (let i = 0; i < this.stockData.length; i++) {
-        if (this.stockData[i].type == this.natureStock + 1 && this.stockData[i].location == this.addressStock + 1) {
+        if (
+          this.stockData[i].type == this.natureStock + 1 &&
+          this.stockData[i].location == this.addressStock + 1
+        ) {
           arr.push(this.stockData[i]);
         }
       }
@@ -139,23 +157,23 @@ export default {
         pic_card: item.pic_card,
         advantage: item.advantage,
         flow: item.flow,
-        need_time: item.need_time
-      }
+        need_time: item.need_time,
+      };
       setItem("data", data);
       if (isWeChat() && isIos()) {
         this.$router.replace({
           name: "Detail",
-          params: { id: this.stockKey + item.id }
-        })
+          params: { id: this.stockKey + item.id },
+        });
       } else {
         this.$router.push({
           name: "Detail",
-          params: { id: this.stockKey + item.id}
-        })
+          params: { id: this.stockKey + item.id },
+        });
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -261,7 +279,7 @@ export default {
           > span {
             font-size: 0.3rem;
             color: #333333;
-          } 
+          }
         }
       }
     }

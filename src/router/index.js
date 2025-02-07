@@ -1,105 +1,115 @@
-import { createRouter, createWebHistory } from "vue-router"
-import Home from "../views/Home.vue"
+import { createRouter, createWebHistory } from "vue-router";
+import Home from "../views/Home.vue";
 
 const routes = [
   {
     path: "/",
     name: "Home",
     meta: {
-      key: "home"
+      key: "home",
     },
-    component: Home
+    component: Home,
   },
   {
     path: "/account",
     name: "Account",
     meta: {
-      key: "account"
+      key: "account",
     },
-    component: () => import(/* webpackChunkName: "account" */ "../views/Account.vue")
+    component: () =>
+      import(/* webpackChunkName: "account" */ "../views/Account.vue"),
   },
   {
     path: "/garden",
     name: "Garden",
     meta: {
-      key: "garden"
+      key: "garden",
     },
-    component: () => import(/* webpackChunkName: "garden" */ "../views/Garden.vue")
+    component: () =>
+      import(/* webpackChunkName: "garden" */ "../views/Garden.vue"),
   },
-  {
-    path: "/mitax",
-    name: "Mitax",
-    meta: {
-      key: "mitax"
-    },
-    component: () => import(/* webpackChunkName: "mitax" */ "../views/Mitax.vue")
-  },
+  // {
+  //   path: "/mitax",
+  //   name: "Mitax",
+  //   meta: {
+  //     key: "mitax"
+  //   },
+  //   component: () => import(/* webpackChunkName: "mitax" */ "../views/Mitax.vue")
+  // },
   {
     path: "/steamer",
     name: "Steamer",
     meta: {
-      key: "steamer"
+      key: "steamer",
     },
-    component: () => import(/* webpackChunkName: "steamer" */ "../views/Steamer.vue")
+    component: () =>
+      import(/* webpackChunkName: "steamer" */ "../views/Steamer.vue"),
   },
   {
     path: "/equity",
     name: "Equity",
     meta: {
-      key: "equity"
+      key: "equity",
     },
-    component: () => import(/* webpackChunkName: "steamer" */ "../views/Equity.vue")
+    component: () =>
+      import(/* webpackChunkName: "steamer" */ "../views/Equity.vue"),
   },
   {
     path: "/stock/:key",
     name: "Stock",
     meta: {
-      key: "stock"
+      key: "stock",
     },
-    component: () => import(/* webpackChunkName: "stock" */ "../views/Stock.vue")
+    component: () =>
+      import(/* webpackChunkName: "stock" */ "../views/Stock.vue"),
   },
   {
     path: "/detail/:id",
     name: "Detail",
     meta: {
-      key: "detail"
+      key: "detail",
     },
-    component: () => import(/* webpackChunkName: "detail" */ "../views/Detail.vue")
+    component: () =>
+      import(/* webpackChunkName: "detail" */ "../views/Detail.vue"),
   },
   {
     path: "/email",
     name: "Email",
     meta: {
-      key: "email"
+      key: "email",
     },
-    component: () => import(/* webpackChunkName: "email" */ "../views/Email.vue")
+    component: () =>
+      import(/* webpackChunkName: "email" */ "../views/Email.vue"),
   },
   {
     path: "/about",
     name: "About",
     meta: {
-      key: "about"
+      key: "about",
     },
-    component: () => import(/* webpackChunkName: "about" */ "../views/About.vue")
-  }
-]
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+];
 
 routes.push(
   {
     path: "/*",
     name: "404",
-    component: () => import(/* webpackChunkName: "error" */ "../views/Error.vue")
+    component: () =>
+      import(/* webpackChunkName: "error" */ "../views/Error.vue"),
   },
   {
     path: "/error/:code",
     name: "Error",
-    component: () => import(/* webpackChunkName: "error" */ "../views/Error.vue")
+    component: () =>
+      import(/* webpackChunkName: "error" */ "../views/Error.vue"),
   }
-)
+);
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

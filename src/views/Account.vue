@@ -9,8 +9,8 @@
         <h1>原因</h1>
         <em>REASON</em>
       </div>
-      <template v-for="(item, index) in reasonData">
-        <div class="account-list" :key="index">
+      <template v-for="(item, index) in reasonData" :key="index">
+        <div class="account-list">
           <div class="account-item">
             <img :src="item.image" alt="明动咨询为您服务" />
             <span :class="'item-label' + index">{{ item.birth }}</span>
@@ -26,8 +26,8 @@
         <em>ADVANTAGE</em>
       </div>
       <div class="account-strip">
-        <template v-for="(item, index) in advantageData">
-          <div class="strip-item" :key="index">
+        <template v-for="(item, index) in advantageData" :key="index">
+          <div class="strip-item">
             <h3>{{ item.name }}</h3>
             <div>
               <p>{{ item.article }}</p>
@@ -45,8 +45,8 @@
       </div>
       <div class="account-circle">
         <span>明动服务</span>
-        <template v-for="(item, index) in circleData">
-          <span v-html="item.name" :key="index"></span>
+        <template v-for="(item, index) in circleData" :key="index">
+          <span v-html="item.name"></span>
         </template>
       </div>
     </div>
@@ -62,13 +62,15 @@ export default {
         {
           image: require("./../assets/image/government.jpg"),
           birth: "政府规定",
-          article: "财政部门建议: 2005年1月1日起全国范围内小企业实行新的《小企业会计制度》, 广大的小企业要根据会计业务的需要, 要设置会计机构, 或者在有关的机构中设置会计人员, 或会计主管人员, 不具备条件的, 要委托经过批准设立的, 从事上海代理记账机构来外包。"
+          article:
+            "财政部门建议: 2005年1月1日起全国范围内小企业实行新的《小企业会计制度》, 广大的小企业要根据会计业务的需要, 要设置会计机构, 或者在有关的机构中设置会计人员, 或会计主管人员, 不具备条件的, 要委托经过批准设立的, 从事上海代理记账机构来外包。",
         },
         {
           image: require("./../assets/image/economy.jpg"),
           birth: "节省费用",
-          article: "单位设会计岗位, 工资开支一般每月要5000元（不包括“五险一金”）, 根据本单位部门经理的收入水平, 财务负责人的工资高的可达上万元, 而找上海财务代理知名品牌的我们, 支付的费用与单位的工资水平无关, 一般为300-1000元。"
-        }
+          article:
+            "单位设会计岗位, 工资开支一般每月要5000元（不包括“五险一金”）, 根据本单位部门经理的收入水平, 财务负责人的工资高的可达上万元, 而找上海财务代理知名品牌的我们, 支付的费用与单位的工资水平无关, 一般为300-1000元。",
+        },
       ],
       advantageData: [
         {
@@ -78,7 +80,8 @@ export default {
         },
         {
           name: "存档健全",
-          article: "一客户一档案, 电子、纸质双重保障, 现金账目与电子款项一一对应, 确保数据安全",
+          article:
+            "一客户一档案, 电子、纸质双重保障, 现金账目与电子款项一一对应, 确保数据安全",
           image: require("./../assets/image/acc02.jpg"),
         },
         {
@@ -90,44 +93,44 @@ export default {
           name: "全责担保",
           article: "签订代理记账合同, 条例清晰, 权责分明",
           image: require("./../assets/image/acc04.jpg"),
-        }
+        },
       ],
       circleData: [
         {
-          name: "核对<br>财务<br>账目"
+          name: "核对<br>财务<br>账目",
         },
         {
-          name: "编制<br>记账<br>凭证"
+          name: "编制<br>记账<br>凭证",
         },
         {
-          name: "编制<br>会计<br>报表"
+          name: "编制<br>会计<br>报表",
         },
         {
-          name: "电子<br>网络<br>申报"
+          name: "电子<br>网络<br>申报",
         },
         {
-          name: "财务<br>政策<br>传递"
+          name: "财务<br>政策<br>传递",
         },
         {
-          name: "日常<br>电话<br>答疑"
+          name: "日常<br>电话<br>答疑",
         },
         {
-          name: "审核<br>原始<br>凭证"
+          name: "审核<br>原始<br>凭证",
         },
         {
-          name: "建立<br>企业<br>账套"
-        }
-      ]
-    }
+          name: "建立<br>企业<br>账套",
+        },
+      ],
+    };
   },
   mounted() {
     // 内滚动还原
     document.getElementById("scroll").scrollTo(0, 0);
     this.$nextTick(() => {
       document.body.style.display = "block";
-    })
-  }
-}
+    });
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -136,7 +139,7 @@ export default {
   .account-banner {
     width: 7.5rem;
     height: 3.45rem;
-    background-color: #EEEEEE;
+    background-color: #eeeeee;
     > img {
       width: 100%;
       height: 100%;
@@ -154,7 +157,7 @@ export default {
           margin: 0 auto;
           width: 6.7rem;
           height: 4.2rem;
-          background-color: #EEEEEE;
+          background-color: #eeeeee;
         }
         > span {
           position: absolute;
@@ -177,8 +180,8 @@ export default {
             top: 1.14rem;
             left: -0.3rem;
             content: "";
-            width: .2rem;
-            height: .04rem;
+            width: 0.2rem;
+            height: 0.04rem;
             background: rgba(99, 173, 255, 0.8);
           }
         }
@@ -189,8 +192,8 @@ export default {
             top: 1.14rem;
             left: -0.3rem;
             content: "";
-            width: .2rem;
-            height: .04rem;
+            width: 0.2rem;
+            height: 0.04rem;
             background: rgba(43, 208, 145, 0.8);
           }
         }
@@ -208,14 +211,14 @@ export default {
   }
   .account-advantage {
     padding: 0.68rem 0 0.48rem 0;
-    border-top: 1px solid #EEEEEE;
+    border-top: 1px solid #eeeeee;
     .account-strip {
       .strip-item {
         display: flex;
         flex-direction: column;
         margin: 0 auto;
         width: 6.7rem;
-        border-bottom: 1px solid #EEEEEE;
+        border-bottom: 1px solid #eeeeee;
         > h3 {
           margin: 0.42rem 0 0 0;
           font-size: 0.34rem;
@@ -223,11 +226,11 @@ export default {
           font-weight: bolder;
         }
         > div {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0.28rem 0 0 0;
-        padding: 0 0 0.28rem 0;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+          margin: 0.28rem 0 0 0;
+          padding: 0 0 0.28rem 0;
           > p {
             width: 4rem;
             font-size: 0.28rem;
@@ -239,7 +242,7 @@ export default {
             width: 2.16rem;
             height: 2.34rem;
             border-radius: 0.05rem;
-            background-color: #EEEEEE;
+            background-color: #eeeeee;
             border: 1px solid #eeeeee;
           }
         }
@@ -251,7 +254,7 @@ export default {
   }
   .account-cooperation {
     padding: 0.68rem 0 0.48rem 0;
-    border-top: 1px solid #EEEEEE;
+    border-top: 1px solid #eeeeee;
     .account-circle {
       margin: 0.48rem auto 0 auto;
       position: relative;

@@ -1,8 +1,11 @@
 <template>
   <div class="equity">
     <div v-if="equityData" class="equity-panel">
-      <template v-for="(item, index) in equityData">
-        <div :class="['equity-list', 'equity-list-' + index]" :key="index" @click="onRouter(index, item)">
+      <template v-for="(item, index) in equityData" :key="index">
+        <div
+          :class="['equity-list', 'equity-list-' + index]"
+          @click="onRouter(index, item)"
+        >
           <div>
             <img :src="equityImage[index]" alt="" />
             <span>{{ item }}</span>
@@ -15,8 +18,8 @@
 </template>
 
 <script>
-import { axiosFetch, setItem } from "@/assets/js/appUtils"
-import { isWeChat, isIos } from "@/assets/js/usualUtils.js"
+import { axiosFetch, setItem } from "@/assets/js/appUtils";
+import { isWeChat, isIos } from "@/assets/js/usualUtils.js";
 export default {
   name: "Equity",
   data() {
@@ -35,8 +38,8 @@ export default {
         other: require("@/assets/image/other-icon.png"),
         pawn: require("@/assets/image/pawn-icon.png"),
         private: require("@/assets/image/private-icon.png"),
-      }
-    }
+      },
+    };
   },
   created() {
     this.initData();
@@ -45,7 +48,7 @@ export default {
     document.getElementById("scroll").scrollTo(0, 0);
     this.$nextTick(() => {
       document.body.style.display = "block";
-    })
+    });
   },
   methods: {
     initData() {
@@ -54,32 +57,31 @@ export default {
         method: "POST",
         url: "api/inform",
         load: "请求中..",
-        params: {}
+        params: {},
       })
-      .then((res) => {
-        if (res.status) {
-          that.equityData = res.data;
-        }
-      })
-      .catch(() => {
-      })
+        .then((res) => {
+          if (res.status) {
+            that.equityData = res.data;
+          }
+        })
+        .catch(() => {});
     },
     onRouter(val, item) {
       setItem("title", item);
       if (isWeChat() && isIos()) {
         this.$router.replace({
           name: "Stock",
-          params: { key: val }
-        })
+          params: { key: val },
+        });
       } else {
         this.$router.push({
           name: "Stock",
-          params: { key: val }
-        })
+          params: { key: val },
+        });
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -121,79 +123,79 @@ export default {
       }
     }
     .equity-list-agency {
-      background: url('../assets/image/agency.png') no-repeat;
+      background: url("../assets/image/agency.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-assets {
-      background: url('../assets/image/assets.png') no-repeat;
+      background: url("../assets/image/assets.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-broker {
-      background: url('../assets/image/broker.png') no-repeat;
+      background: url("../assets/image/broker.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-equity {
-      background: url('../assets/image/equity.png') no-repeat;
+      background: url("../assets/image/equity.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-factor {
-      background: url('../assets/image/factor.png') no-repeat;
+      background: url("../assets/image/factor.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-invest {
-      background: url('../assets/image/invest.png') no-repeat;
+      background: url("../assets/image/invest.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-itloan {
-      background: url('../assets/image/itloan.png') no-repeat;
+      background: url("../assets/image/itloan.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-lease {
-      background: url('../assets/image/lease.png') no-repeat;
+      background: url("../assets/image/lease.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-loan {
-      background: url('../assets/image/loan.png') no-repeat;
+      background: url("../assets/image/loan.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-equity {
-      background: url('../assets/image/equity.png') no-repeat;
+      background: url("../assets/image/equity.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-other {
-      background: url('../assets/image/other.png') no-repeat;
+      background: url("../assets/image/other.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-pawn {
-      background: url('../assets/image/pawn.png') no-repeat;
+      background: url("../assets/image/pawn.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;
     }
     .equity-list-private {
-      background: url('../assets/image/private.png') no-repeat;
+      background: url("../assets/image/private.png") no-repeat;
       background-size: 100%;
       background-position: center center;
       background-color: #ffffff;

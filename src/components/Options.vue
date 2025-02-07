@@ -6,8 +6,15 @@
         <img src="~@/assets/image/conceal.png" alt="明动咨询" />
       </div>
       <div class="options-box">
-        <template v-for="(item, index) in listData">
-          <div @click="onRouter(item.path)" :class="$store.getters.getStateIndex == item.key ? 'options-list options-list-active' : 'options-list'" :key="index">
+        <template v-for="(item, index) in listData" :key="index">
+          <div
+            @click="onRouter(item.path)"
+            :class="
+              $store.getters.getStateIndex == item.key
+                ? 'options-list options-list-active'
+                : 'options-list'
+            "
+          >
             <span>{{ item.name }}</span>
             <img src="~@/assets/image/boult.png" alt="明动咨询" />
           </div>
@@ -18,30 +25,30 @@
 </template>
 
 <script>
-import { isWeChat, isIos } from "@/assets/js/usualUtils.js"
+import { isWeChat, isIos } from "@/assets/js/usualUtils.js";
 export default {
   name: "Options",
   props: {
-    toggle: Boolean
+    toggle: Boolean,
   },
   data() {
     return {
       cover: false,
       listData: [
-        {name: "首页", path: "/", key: "home"},
-        {name: "财务代理", path: "/account", key: "account"},
-        {name: "园区直招", path: "/garden", key: "garden"},
-        {name: "爱税筹", path: "/mitax", key: "mitax"},
-        {name: "舟山自贸区", path: "/steamer", key: "steamer"},
-        {name: "股权服务", path: "/equity", key: "equity"},
-        {name: "在线预约", path: "/email", key: "email"},
-        {name: "关于我们", path: "/about", key: "about"},
-      ]
-    }
+        { name: "首页", path: "/", key: "home" },
+        { name: "财务代理", path: "/account", key: "account" },
+        { name: "园区直招", path: "/garden", key: "garden" },
+        // { name: "爱税筹", path: "/mitax", key: "mitax" },
+        { name: "舟山自贸区", path: "/steamer", key: "steamer" },
+        { name: "股权服务", path: "/equity", key: "equity" },
+        { name: "在线预约", path: "/email", key: "email" },
+        { name: "关于我们", path: "/about", key: "about" },
+      ],
+    };
   },
   watch: {
     toggle: {
-      handler: function() {
+      handler: function () {
         if (this.toggle) {
           this.cover = true;
           setTimeout(() => {
@@ -53,8 +60,8 @@ export default {
             this.cover = false;
           }, 330);
         }
-      }
-    }
+      },
+    },
   },
   methods: {
     onCancel() {
@@ -63,16 +70,16 @@ export default {
     onRouter(path) {
       if (isWeChat() && isIos()) {
         this.$router.replace({
-          path: path
-        })
+          path: path,
+        });
       } else {
         this.$router.push({
-          path: path
-        })
+          path: path,
+        });
       }
-    }
-  }
-}
+    },
+  },
+};
 </script>
 
 <style lang="less" scoped>

@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
   <div class="mitax">
     <div class="mitax-head">
       <h3>爱税筹<em>I-TAX</em></h3>
@@ -8,8 +8,12 @@
       <div class="mitax-introduce">
         <h1>爱税筹简介</h1>
         <div>
-          <p>爱税筹为明动咨询旗下专业的财税筹划品牌。明动咨询，成立于2013年10月18日,专注于自贸试验区、类金融行业、TMT行业（电信、媒体和科技）及其他新兴行业的企业服务。</p>
-          <p>我们的使命是“研究并提供企业需要的服务，帮助企业实现更大的经济效益”</p>
+          <p>
+            爱税筹为明动咨询旗下专业的财税筹划品牌。明动咨询，成立于2013年10月18日,专注于自贸试验区、类金融行业、TMT行业（电信、媒体和科技）及其他新兴行业的企业服务。
+          </p>
+          <p>
+            我们的使命是“研究并提供企业需要的服务，帮助企业实现更大的经济效益”
+          </p>
         </div>
       </div>
       <div class="mitax-room">
@@ -111,8 +115,8 @@
           <h1>服务流程</h1>
         </div>
         <div class="mitax-service">
-          <template v-for="(item, index) in serveData">
-            <div :key="index">
+          <template v-for="(item, index) in serveData" :key="index">
+            <div>
               <span>{{ item.label }}</span>
               <span>{{ item.article }}</span>
             </div>
@@ -130,15 +134,15 @@
               <span>华东</span>
             </div>
             <div>
-              <em style="background: rgb(254, 212, 135);"></em>
+              <em style="background: rgb(254, 212, 135)"></em>
               <span>华中</span>
             </div>
             <div>
-              <em style="background: rgb(249, 174, 133);"></em>
+              <em style="background: rgb(249, 174, 133)"></em>
               <span>华南</span>
             </div>
             <div>
-              <em style="background: rgb(177, 0, 6);"></em>
+              <em style="background: rgb(177, 0, 6)"></em>
               <span>西南</span>
             </div>
           </div>
@@ -158,34 +162,34 @@ export default {
       serveData: [
         {
           label: "1、",
-          article: "专属方案制定（方案制定1-2个工作日完成）"
+          article: "专属方案制定（方案制定1-2个工作日完成）",
         },
         {
           label: "2、",
-          article: "合同签订"
+          article: "合同签订",
         },
         {
           label: "3、",
-          article: "资料对接（资料收集2-3个工作日完成）"
+          article: "资料对接（资料收集2-3个工作日完成）",
         },
         {
           label: "4、",
-          article: "开立爱税筹站点"
+          article: "开立爱税筹站点",
         },
         {
           label: "5、",
-          article: "爱税筹业务服务（爱税筹业务服务按需求反馈来）"
+          article: "爱税筹业务服务（爱税筹业务服务按需求反馈来）",
         },
         {
           label: "6、",
-          article: "爱税筹业务处理（爱税筹业务处理2-3个工作日完成）"
+          article: "爱税筹业务处理（爱税筹业务处理2-3个工作日完成）",
         },
         {
           label: "7、",
-          article: "完税、结算（完税、结算、付款、付款2-3个工作日完成）"
-        }
-      ]
-    }
+          article: "完税、结算（完税、结算、付款、付款2-3个工作日完成）",
+        },
+      ],
+    };
   },
   mounted() {
     new Swiper(".mitax-product .swiper-container", {
@@ -198,9 +202,9 @@ export default {
     document.getElementById("scroll").scrollTo(0, 0);
     this.$nextTick(() => {
       document.body.style.display = "block";
-    })
-  }
-}
+    });
+  },
+};
 </script>
 
 <style lang="less" scoped>
@@ -482,4 +486,4 @@ export default {
   }
 }
 </style>
-
+ -->
